@@ -27,9 +27,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Package manager lock files (using npm)
-pnpm-lock.yaml
+# Package manager lock files (using pnpm)
 yarn.lock
+package-lock.json
 
 # Editor directories and files
 .vscode/*
