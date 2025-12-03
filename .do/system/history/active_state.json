@@ -1,6 +1,6 @@
 {
-  "active_task": null,
-  "active_branch": null,
+  "active_task": "1.2",
+  "active_branch": "task/1.2",
   "completed": ["1.1"],
   "locked": false,
   "phase": "tasks",

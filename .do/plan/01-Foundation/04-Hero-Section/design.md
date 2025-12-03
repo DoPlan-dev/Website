@@ -1,0 +1,283 @@
+# Design: Hero Section
+## Feature 04-Hero-Section
+
+**Feature ID**: 04-Hero-Section  
+**Phase**: 01-Foundation
+
+---
+
+## Design Specifications
+
+### Layout Structure
+
+**Desktop (1024px+):**
+- Grid: 50-50 split (left content, right visual)
+- Height: 720px
+- Padding: 96px top/bottom
+- Container max-width: 1440px
+- Edge padding: 32px
+
+**Mobile (375-480px):**
+- Single column layout
+- Height: auto
+- Padding: 64px top/bottom
+- Terminal visual below headline
+- Full-width CTA button
+
+---
+
+## Component Design
+
+### Hero Section Container
+
+```css
+.hero-section {
+  background: var(--color-void);
+  background-image: radial-gradient(
+    circle at 50% 30%,
+    rgba(0, 217, 255, 0.05) 0%,
+    transparent 50%
+  );
+  min-height: 720px;
+  padding: 96px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 64px 16px;
+  }
+}
+```
+
+### Headline Component
+
+```css
+.hero-headline {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-light);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 32px;
+  }
+}
+```
+
+### Subheadline Component
+
+```css
+.hero-subheadline {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-mid);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+  .hero-subheadline {
+    font-size: 18px;
+  }
+}
+```
+
+### Commands List
+
+```css
+.hero-commands {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+
+.hero-command {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--color-cyan);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-command::before {
+  content: '/';
+  color: var(--color-purple);
+  font-weight: 600;
+}
+```
+
+### Copy Button
+
+```css
+.hero-copy-button {
+  background: var(--gradient-primary);
+  border: 1px solid rgba(0, 217, 255, 0.8);
+  border-radius: 12px;
+  padding: 16px 32px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-light);
+  cursor: pointer;
+  box-shadow: var(--shadow-glow-primary);
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-top: 32px;
+}
+
+.hero-copy-button:hover {
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.6),
+              0 12px 48px rgba(0, 217, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+  .hero-copy-button {
+    width: 100%;
+    height: 48px;
+  }
+}
+```
+
+### Terminal Window Component
+
+```css
+.terminal-window {
+  background: #050A1A;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: var(--shadow-elevation-3),
+              var(--shadow-glow-primary);
+  overflow: hidden;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.terminal-header {
+  height: 40px;
+  background: var(--color-void);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.terminal-control {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.terminal-control-red {
+  background: #FF5F57;
+}
+
+.terminal-control-yellow {
+  background: #FFBD2E;
+}
+
+.terminal-control-green {
+  background: #28C840;
+}
+
+.terminal-label {
+  font-size: 12px;
+  color: var(--color-mid);
+  margin-left: 12px;
+}
+
+.terminal-content {
+  padding: 24px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--color-cyan);
+  background: #050A1A;
+}
+```
+
+---
+
+## Content Specifications
+
+### Headline Options
+- "Code at the Speed of Thought"
+- "Build Production Apps Without the Burnout"
+- "Finish Projects Before Your Coffee Gets Cold"
+
+### Subheadline Options
+- "Join 50,000+ developers using DoPlan CLI to ship faster"
+- "The AI-powered CLI that turns ideas into production apps"
+- "Five commands. Infinite possibilities."
+
+### Commands Display
+```
+/hey  - Welcome, tutorial, and command introductions
+/do   - Capture project idea, conduct meeting, and refine
+/plan - Generate documents & execution plan
+/dev  - Start coding with automatic completion detection
+/sys  - System control panel
+```
+
+### Install Command
+```
+npx @doplan-dev/cli
+```
+
+---
+
+## Animation Specifications
+
+### Floating Terminal
+- **Type**: CSS transform (translateY)
+- **Duration**: 3s
+- **Easing**: ease-in-out
+- **Movement**: 10px vertical
+- **Performance**: Use will-change: transform
+
+### Button Hover
+- **Type**: CSS transition
+- **Duration**: 200ms
+- **Easing**: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+- **Effects**: translateY(-4px), expanded shadow
+
+---
+
+## Performance Requirements
+
+- **Load Time**: <1 second
+- **LCP**: <2.5s
+- **FID**: <100ms
+- **CLS**: <0.1
+- **Lighthouse Score**: 98%+
+
+### Optimization Strategies
+- Lazy load terminal component if below fold
+- Use CSS animations (not JavaScript)
+- Minimize CSS for hero section
+- Critical CSS inline for above-fold content
+- Optimize fonts (preload, font-display: swap)
+
+---
+
+*Generated by DoPlan CLI v1.3.4*  
+*Sup-Agent: Engineering Lead*  
+*Date: 2025-12-03*
+
