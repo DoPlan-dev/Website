@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Design System Colors - CSS Variables */
+  --color-void: #0A0E27;
+  --color-cyan: #00D9FF;
+  --color-purple: #9D4EDD;
+  --color-light: #E8F0FF;
+  --color-mid: #B0BBCC;
+  --color-success: #00D98E;
+  
+  /* Spacing Scale (8px base) */
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  
+  /* Shadows */
+  --shadow-elevation-1: 0 2px 8px rgba(0, 217, 255, 0.08);
+  --shadow-elevation-2: 0 4px 16px rgba(0, 217, 255, 0.12), 0 0 24px rgba(157, 78, 221, 0.06);
+  --shadow-elevation-3: 0 8px 32px rgba(0, 217, 255, 0.16), 0 0 48px rgba(157, 78, 221, 0.1);
+  --shadow-glow-primary: 0 0 20px rgba(0, 217, 255, 0.4);
+  --shadow-glow-secondary: 0 0 20px rgba(157, 78, 221, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-void);
+  color: var(--color-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+

@@ -1,0 +1,216 @@
+# Design: Project Setup & Infrastructure
+## Feature 01-Project-Setup
+
+**Feature ID**: 01-Project-Setup  
+**Phase**: 01-Foundation  
+**Status**: Draft
+
+---
+
+## Design Requirements
+
+This feature focuses on infrastructure setup, so design requirements are minimal. However, the configuration files and project structure should follow best practices and align with the architecture.
+
+---
+
+## File Structure Design
+
+### Directory Organization
+
+```
+doplan-website/
+├── public/                 # Static assets
+│   ├── images/
+│   ├── icons/
+│   └── favicon.ico
+├── src/
+│   ├── components/        # React components
+│   │   ├── ui/           # Base UI components (buttons, cards, etc.)
+│   │   ├── layout/       # Layout components (header, footer, etc.)
+│   │   ├── sections/     # Page sections (hero, features, etc.)
+│   │   └── terminal/     # Terminal/code display components
+│   ├── pages/            # Page components
+│   │   ├── Home.tsx
+│   │   ├── Features.tsx
+│   │   └── Docs.tsx
+│   ├── hooks/            # Custom React hooks
+│   ├── utils/            # Utility functions
+│   ├── styles/           # Global styles
+│   │   ├── globals.css
+│   │   └── tailwind.css
+│   ├── assets/           # Assets (images, etc.)
+│   ├── lib/              # Third-party integrations
+│   │   ├── analytics.ts
+│   │   ├── chat.ts
+│   │   └── monitoring.ts
+│   ├── App.tsx           # Root component
+│   └── main.tsx          # Entry point
+├── .github/              # GitHub workflows
+├── .vercel/              # Vercel configuration
+├── .do/                  # DoPlan project files
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── tailwind.config.js
+├── postcss.config.js
+├── eslint.config.js
+├── .prettierrc
+├── vercel.json
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
+---
+
+## Configuration File Designs
+
+### Tailwind Configuration
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        void: '#0A0E27',
+        cyan: '#00D9FF',
+        purple: '#9D4EDD',
+        light: '#E8F0FF',
+        mid: '#B0BBCC',
+        success: '#00D98E',
+        warning: '#FF9D3D',
+        error: '#FF4757',
+        'neutral-dark': '#5A6B7F',
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Consolas', 'monospace'],
+      },
+      spacing: {
+        // 8px base grid
+      },
+      borderRadius: {
+        'subtle': '4px',
+        'moderate': '8px',
+        'large': '12px',
+        'smooth': '16px',
+      },
+      boxShadow: {
+        'elevation-1': '0 2px 8px rgba(0, 217, 255, 0.08)',
+        'elevation-2': '0 4px 16px rgba(0, 217, 255, 0.12), 0 0 24px rgba(157, 78, 221, 0.06)',
+        'elevation-3': '0 8px 32px rgba(0, 217, 255, 0.16), 0 0 48px rgba(157, 78, 221, 0.1)',
+        'glow-primary': '0 0 20px rgba(0, 217, 255, 0.4), inset 0 0 20px rgba(0, 217, 255, 0.1)',
+        'glow-secondary': '0 0 20px rgba(157, 78, 221, 0.3), inset 0 0 20px rgba(157, 78, 221, 0.05)',
+      },
+    },
+  },
+  plugins: [],
+}
+```
+
+### TypeScript Configuration
+
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+```
+
+### Vercel Configuration
+
+```json
+// vercel.json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+```
+
+---
+
+## Environment Variables Design
+
+### .env.example
+
+```bash
+# Analytics
+VITE_ANALYTICS_ID=
+
+# Chat Integration (8n8)
+VITE_CHAT_ENABLED=false
+VITE_CHAT_API_KEY=
+
+# Monitoring
+VITE_MONITORING_ENABLED=false
+
+# Feature Flags
+VITE_ENABLE_HEATMAP=false
+```
+
+---
+
+## Naming Conventions
+
+### Files
+- Components: PascalCase (e.g., `HeroSection.tsx`)
+- Utilities: camelCase (e.g., `formatDate.ts`)
+- Hooks: camelCase with `use` prefix (e.g., `useCopyToClipboard.ts`)
+- Styles: kebab-case (e.g., `globals.css`)
+
+### Directories
+- Lowercase with hyphens for multi-word (e.g., `hero-section/`)
+- Or camelCase for single words (e.g., `components/`)
+
+---
+
+## Code Quality Standards
+
+### ESLint Rules
+- React hooks rules enabled
+- TypeScript strict rules
+- Import ordering
+- No console.log in production
+
+### Prettier Configuration
+- Single quotes
+- Trailing commas
+- 2-space indentation
+- 80 character line width (flexible)
+
+---
+
+*Generated by DoPlan CLI v1.3.4*  
+*Sup-Agent: Engineering Lead*  
+*Date: 2025-12-03*
+
