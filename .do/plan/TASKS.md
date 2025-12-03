@@ -49,13 +49,13 @@ High-conversion marketing website to convert visitors into DoPlan CLI users. MVP
 
 **Estimated Time:** 3-4 hours
 
-### 1.3 Core Layout Components
-- [ ] Create Header/Navigation component
-- [ ] Create Footer component
-- [ ] Create Layout wrapper component
-- [ ] Implement responsive navigation (mobile menu)
-- [ ] Add skip-to-content link (accessibility)
-- [ ] Implement sticky header on scroll
+### 1.3 Core Layout Components ✅ Complete
+- [x] Create Header/Navigation component
+- [x] Create Footer component
+- [x] Create Layout wrapper component
+- [x] Implement responsive navigation (mobile menu)
+- [x] Add skip-to-content link (accessibility)
+- [x] Implement sticky header on scroll
 
 **Estimated Time:** 4-5 hours
 

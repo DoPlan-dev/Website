@@ -1,10 +1,11 @@
+import { Layout } from './components/layout/Layout'
 import { Button } from './components/ui/Button'
 import { Card } from './components/ui/Card'
 
 function App() {
   return (
-    <div className="min-h-screen bg-void text-light">
-      <main className="container mx-auto px-xl py-xxl">
+    <Layout>
+      <div className="container mx-auto px-xl py-xxl">
         <h1 className="text-hero mb-m">DoPlan.dev</h1>
         <p className="text-body text-mid mb-xl">Marketing website coming soon...</p>
         
@@ -20,8 +21,8 @@ function App() {
             This is a test card to verify the design system is working correctly.
           </p>
         </Card>
-      </main>
-    </div>
+      </div>
+    </Layout>
   )
 }
 
