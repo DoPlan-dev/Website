@@ -1,0 +1,249 @@
+# Design: Five Commands Section
+## Feature 05-Commands-Section
+
+**Feature ID**: 05-Commands-Section  
+**Phase**: 01-Foundation
+
+---
+
+## Section Layout
+
+### Grid Structure
+
+**Desktop (1024px+):**
+- Grid: 4 columns
+- Gap: 24px
+- Padding: 80px top/bottom
+- Container max-width: 1440px
+
+**Tablet (768px):**
+- Grid: 2 columns
+- Gap: 24px
+- Padding: 64px top/bottom
+
+**Mobile (375-480px):**
+- Grid: 1 column
+- Gap: 16px
+- Padding: 48px top/bottom
+
+---
+
+## Command Card Design
+
+### Card Structure
+
+```css
+.command-card {
+  background: var(--color-void);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--shadow-elevation-2);
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.command-card:hover {
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: var(--shadow-elevation-3);
+  transform: translateY(-4px);
+}
+```
+
+### Card Interior
+
+```
+┌─────────────────────────────┐
+│ [Icon]  /command-name       │ ← Icon (32x32px, Cyan)
+│                             │
+│ Description text explaining │ ← Description (16px, Regular)
+│ what the command does and   │
+│ when to use it.             │
+│                             │
+│ Example:                    │ ← Example (14px, Mono, Cyan)
+│ $ /command subcommand       │
+└─────────────────────────────┘
+```
+
+### Card Typography
+
+```css
+.command-name {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-cyan);
+  margin-bottom: 12px;
+}
+
+.command-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-light);
+  margin-bottom: 16px;
+}
+
+.command-example {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-cyan);
+  opacity: 0.8;
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(0, 217, 255, 0.05);
+  border-radius: 8px;
+}
+```
+
+---
+
+## Command Icons
+
+### Icon Design
+- Size: 32x32px
+- Color: Cyan (#00D9FF)
+- Style: Simple, recognizable
+- Position: Top-left of card
+
+### Icon Options
+- /hey: Welcome/hello icon
+- /do: Action/play icon
+- /plan: Document/plan icon
+- /dev: Code/terminal icon
+- /sys: Settings/gear icon
+
+---
+
+## Visual Hierarchy
+
+### Primary Command (/hey)
+- Slightly larger card (optional)
+- Emphasized with Cyan glow
+- Position: First in grid
+
+### Secondary Commands (/do, /plan, /dev)
+- Standard card size
+- Standard styling
+- Position: Middle of grid
+
+### Tertiary Command (/sys)
+- Standard card size
+- Standard styling
+- Position: Last in grid
+
+---
+
+## Hover Effects
+
+### Card Hover State
+
+```css
+.command-card:hover {
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: var(--shadow-elevation-3),
+              0 0 20px rgba(0, 217, 255, 0.2);
+  transform: translateY(-4px);
+}
+```
+
+### Animation Details
+- Duration: 200ms
+- Easing: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+- Transform: translateY(-4px)
+- Shadow: Expanded 30%
+- Border: Opacity increased
+
+---
+
+## Scroll Animations
+
+### Fade-in Animation
+
+```css
+.command-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.command-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+```
+
+### Stagger Effect
+- Delay: 100ms between each card
+- Trigger: When 25% of section in viewport
+- Implementation: Intersection Observer or Framer Motion
+
+---
+
+## Section Container
+
+```css
+.commands-section {
+  padding: 80px 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.commands-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .commands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .commands-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .commands-section {
+    padding: 48px 16px;
+  }
+}
+```
+
+---
+
+## Command Content
+
+### /hey Command
+- **Name**: `/hey`
+- **Description**: Welcome, tutorial, and command introductions. Get started with DoPlan and learn the basics.
+- **Example**: `$ /hey` - Start the welcome tutorial
+
+### /do Command
+- **Name**: `/do`
+- **Description**: Capture project idea, conduct meeting, and refine. Turn your ideas into actionable plans.
+- **Example**: `$ /do` - Start a new project
+
+### /plan Command
+- **Name**: `/plan`
+- **Description**: Generate documents & execution plan. Create PRD, architecture, and task breakdowns.
+- **Example**: `$ /plan docs` - Generate planning documents
+
+### /dev Command
+- **Name**: `/dev`
+- **Description**: Start coding with automatic completion detection. Build features with AI assistance.
+- **Example**: `$ /dev` - Start development mode
+
+### /sys Command
+- **Name**: `/sys`
+- **Description**: System control panel. Manage project state, backups, and system settings.
+- **Example**: `$ /sys status` - Check project status
+
+---
+
+*Generated by DoPlan CLI v1.3.4*  
+*Sup-Agent: Engineering Lead*  
+*Date: 2025-12-03*
+
