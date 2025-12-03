@@ -1,0 +1,46 @@
+graph TD
+    subgraph "Trigger Events"
+        T1[Pull Request]
+        T2[Push to main/develop]
+        T3[Schedule]
+        T4[Manual]
+    end
+    
+    subgraph "Workflow Jobs"
+        W1[Lint & Type Check]
+        W2[Unit Tests]
+        W3[Build]
+        W4[Integration Tests]
+        W5[E2E Tests]
+        W6[Performance Test]
+        W7[Security Scan]
+        W8[Deploy Preview]
+        W9[Deploy Staging]
+        W10[Deploy Production]
+    end
+    
+    subgraph "Environments"
+        E1[Preview]
+        E2[Staging]
+        E3[Production]
+    end
+    
+    T1 --> W1
+    W1 --> W2
+    W2 --> W3
+    W3 --> W8
+    W8 --> E1
+    
+    T2 --> W4
+    W4 --> W5
+    W5 --> W6
+    W6 --> W9
+    W9 --> E2
+    
+    T3 --> W7
+    T4 --> W10
+    W10 --> E3
+    
+    style W8 fill:#00D9FF
+    style W9 fill:#FFB84D
+    style W10 fill:#00FF85

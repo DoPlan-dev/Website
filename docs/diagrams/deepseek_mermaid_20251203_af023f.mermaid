@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant U as User
+    participant C as CLI
+    participant V as Validator
+    participant P as Parser
+    participant H as Handler
+    participant A as AI Agent
+    participant D as Database
+    participant O as Output
+    
+    U->>C: Enter command
+    C->>V: Validate syntax
+    V-->>C: Validation result
+    C->>P: Parse arguments
+    P-->>C: Parsed data
+    C->>H: Execute command
+    H->>A: Request AI assistance
+    A-->>H: AI suggestions
+    H->>D: Store/Retrieve data
+    D-->>H: Data result
+    H->>O: Format output
+    O-->>U: Display result
+    H->>D: Log execution

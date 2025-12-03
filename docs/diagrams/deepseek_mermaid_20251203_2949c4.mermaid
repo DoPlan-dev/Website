@@ -1,0 +1,33 @@
+graph LR
+    subgraph "Local Development"
+        A[Feature Branch] --> B[Code]
+        B --> C[Tests]
+        C --> D[Commit]
+    end
+    
+    subgraph "CI/CD Pipeline"
+        D --> E[Push to GitHub]
+        E --> F{GitHub Actions}
+        F -->|Pass| G[Deploy Preview]
+        F -->|Fail| H[Notify Developer]
+        G --> I[Automated Tests]
+        I --> J[Performance Audit]
+        J --> K[Accessibility Check]
+        K --> L[Security Scan]
+    end
+    
+    subgraph "Deployment"
+        L --> M{Approval Required}
+        M -->|Auto| N[Deploy Staging]
+        M -->|Manual| O[Team Review]
+        O --> P[Deploy Production]
+        N --> Q[Canary Release 5%]
+        Q --> R[Monitor 1h]
+        R --> S{Success?}
+        S -->|Yes| T[Rollout 100%]
+        S -->|No| U[Rollback]
+    end
+    
+    style F fill:#00D9FF
+    style Q fill:#FFB84D
+    style T fill:#00FF85

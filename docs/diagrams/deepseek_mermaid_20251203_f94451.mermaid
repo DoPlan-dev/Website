@@ -1,0 +1,39 @@
+graph TB
+    subgraph "Frontend Layer"
+        F1[Next.js 14 App]
+        F2[React Components]
+        F3[State Management]
+        F4[WebSocket Client]
+    end
+    
+    subgraph "Backend Layer"
+        B1[Node.js API]
+        B2[WebSocket Server]
+        B3[Authentication]
+        B4[AI Model Gateway]
+    end
+    
+    subgraph "Data Layer"
+        D1[PostgreSQL]
+        D2[Redis Cache]
+        D3[ElasticSearch]
+        D4[S3 Storage]
+    end
+    
+    subgraph "External Services"
+        E1[GitHub API]
+        E2[OpenAI API]
+        E3[Stripe]
+        E4[Cloudflare CDN]
+    end
+    
+    F1 --> B1
+    B1 --> D1
+    B1 --> D2
+    B1 --> E2
+    F4 --> B2
+    B2 --> D3
+    
+    style F1 fill:#00D9FF
+    style B1 fill:#A020F0
+    style D1 fill:#00FF85

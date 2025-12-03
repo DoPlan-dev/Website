@@ -1,0 +1,32 @@
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Parsing: /dev <feature>
+    Parsing --> Validating: Extract params
+    Validating --> CreatingBranch: Check repo
+    CreatingBranch --> Scaffolding: Git branch
+    Scaffolding --> SettingUp: Generate files
+    SettingUp --> StartingAgents: Configure
+    StartingAgents --> Monitoring: Launch AI
+    Monitoring --> [*]: Ready for work
+    
+    note right of CreatingBranch
+        Branch naming:
+        feature/{username}/{ticket}-{desc}
+        Example: feature/john/DPL-101-auth-flow
+    end note
+    
+    note right of Scaffolding
+        Generated:
+        - Component files
+        - Test files
+        - Type definitions
+        - Documentation stub
+    end note
+    
+    note right of StartingAgents
+        Agents activated:
+        - Architect (structure)
+        - Debugger (quality)
+        - Performance (optimization)
+        - Testing (coverage)
+    end note

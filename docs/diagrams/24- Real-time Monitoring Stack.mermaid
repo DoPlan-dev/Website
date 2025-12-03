@@ -1,0 +1,38 @@
+graph LR
+    subgraph "Data Collection"
+        DC1[Application Logs]
+        DC2[Performance Metrics]
+        DC3[User Events]
+        DC4[Business Metrics]
+    end
+    
+    subgraph "Processing"
+        P1[Log Aggregator]
+        P2[Metrics Collector]
+        P3[Event Processor]
+        P4[Alert Manager]
+    end
+    
+    subgraph "Storage"
+        S1[Time Series DB]
+        S2[Log Storage]
+        S3[Data Warehouse]
+        S4[Cache Layer]
+    end
+    
+    subgraph "Visualization"
+        V1[Dashboards]
+        V2[Reports]
+        V3[Alerts]
+        V4[Predictive Analytics]
+    end
+    
+    DC1 --> P1 --> S2
+    DC2 --> P2 --> S1
+    DC3 --> P3 --> S3
+    DC4 --> P4 --> V3
+    
+    S1 --> V1
+    S2 --> V2
+    S3 --> V4
+    S4 --> V1

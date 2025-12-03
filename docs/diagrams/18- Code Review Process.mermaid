@@ -1,0 +1,31 @@
+sequenceDiagram
+    participant D as Developer
+    participant G as GitHub
+    participant CI as CI Pipeline
+    participant R1 as Reviewer 1
+    participant R2 as Reviewer 2
+    participant M as Merge Bot
+    
+    D->>G: Push to feature branch
+    G->>CI: Trigger pipeline
+    CI->>CI: Run tests/lint/build
+    CI-->>G: Report status
+    
+    D->>G: Create PR
+    G->>R1: Request review
+    R1->>G: Review comments
+    D->>G: Address comments
+    G->>CI: Re-run pipeline
+    
+    CI-->>G: Pass
+    G->>R2: Request review
+    R2->>G: Approve
+    
+    alt Auto-merge enabled
+        G->>M: Merge to develop
+        M->>CI: Trigger deploy
+    else Manual merge
+        D->>G: Merge manually
+    end
+    
+    CI->>CI: Deploy to staging

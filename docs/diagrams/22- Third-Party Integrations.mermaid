@@ -1,0 +1,51 @@
+graph TB
+    subgraph "Code Platforms"
+        G[GitHub]
+        GL[GitLab]
+        B[Bitbucket]
+    end
+    
+    subgraph "Communication"
+        S[Slack]
+        D[Discord]
+        T[Teams]
+    end
+    
+    subgraph "Project Management"
+        J[Jira]
+        TA[Trello/Asana]
+        L[Linear]
+    end
+    
+    subgraph "Cloud Providers"
+        AWS[AWS]
+        GCP[Google Cloud]
+        AZ[Azure]
+        V[Vercel]
+    end
+    
+    subgraph "DoPlan Core"
+        DP[DoPlan CLI]
+        DPW[DoPlan Web]
+        DPA[DoPlan API]
+    end
+    
+    DP --> G
+    DP --> GL
+    DP --> B
+    
+    DP --> S
+    DP --> D
+    DP --> T
+    
+    DP --> J
+    DP --> TA
+    DP --> L
+    
+    DP --> AWS
+    DP --> GCP
+    DP --> AZ
+    DP --> V
+    
+    DPW --> DPA
+    DPA --> DP

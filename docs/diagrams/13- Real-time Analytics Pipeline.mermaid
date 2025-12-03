@@ -1,0 +1,46 @@
+graph LR
+    subgraph "Client-Side Collection"
+        C1[Page Views]
+        C2[Click Events]
+        C3[Scroll Depth]
+        C4[Form Interactions]
+        C5[Command Usage]
+    end
+    
+    subgraph "Processing Layer"
+        P1[Event Queue]
+        P2[Data Validation]
+        P3[User Identification]
+        P4[Session Tracking]
+    end
+    
+    subgraph "Storage Layer"
+        S1[PostgreSQL - Structured]
+        S2[Redis - Real-time]
+        S3[ElasticSearch - Logs]
+        S4[S3 - Archives]
+    end
+    
+    subgraph "Analysis Layer"
+        A1[Real-time Dashboard]
+        A2[Conversion Funnels]
+        A3[Cohort Analysis]
+        A4[Predictive Models]
+    end
+    
+    C1 --> P1
+    C2 --> P1
+    C3 --> P1
+    C4 --> P1
+    C5 --> P1
+    
+    P1 --> P2 --> P3 --> P4
+    
+    P4 --> S1
+    P4 --> S2
+    P4 --> S3
+    
+    S1 --> A2
+    S2 --> A1
+    S3 --> A3
+    S1 --> A4

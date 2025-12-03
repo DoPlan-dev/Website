@@ -1,0 +1,27 @@
+flowchart TD
+    A[Production Bug Reported] --> B{Triage: Severity?}
+    B -->|Critical| C[Create Hotfix Branch]
+    B -->|Major| D[Add to Next Sprint]
+    B -->|Minor| E[Schedule Fix]
+    
+    C --> F[Implement Fix]
+    F --> G[Local Testing]
+    G --> H[Expedited Review]
+    H --> I[Security Check]
+    I --> J[Deploy to Staging]
+    J --> K[Smoke Tests]
+    K --> L{Pass?}
+    L -->|Yes| M[Deploy to Production]
+    L -->|No| N[Rollback & Debug]
+    
+    M --> O[Monitor 1 Hour]
+    O --> P{Stable?}
+    P -->|Yes| Q[Update Documentation]
+    P -->|No| R[Rollback & Notify]
+    
+    Q --> S[Merge to Develop/Main]
+    S --> T[Close Incident]
+    
+    style C fill:#FF4D4D
+    style M fill:#00FF85
+    style R fill:#FFB84D

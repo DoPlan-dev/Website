@@ -1,0 +1,47 @@
+graph TB
+    subgraph "Content Creation Engine"
+        CC[Content Calendar] --> BLOG[Blog Posts]
+        CC --> VIDEO[YouTube Videos]
+        CC --> PODCAST[Podcast Episodes]
+        CC --> SOCIAL[Social Media Posts]
+    end
+    
+    subgraph "Distribution Network"
+        BLOG --> EMAIL[Newsletter]
+        BLOG --> TWITTER[X Threads]
+        BLOG --> LINKEDIN[LinkedIn Articles]
+        
+        VIDEO --> YOUTUBE[YouTube Channel]
+        VIDEO --> INSTA[Instagram Reels]
+        VIDEO --> TIKTOK[TikTok Shorts]
+        
+        PODCAST --> AUDIO[Podcast Platforms]
+        PODCAST --> TRANS[Blog Transcripts]
+        PODCAST --> CLIPS[Social Media Clips]
+    end
+    
+    subgraph "Community Engagement"
+        EMAIL --> DISCORD[Discord Discussion]
+        TWITTER --> DISCORD
+        YOUTUBE --> DISCORD
+        
+        DISCORD --> FEEDBACK[Feedback Board]
+        FEEDBACK --> GITHUB[GitHub Issues]
+        GITHUB --> DOCS[Documentation Updates]
+    end
+    
+    subgraph "Conversion Funnel"
+        DOCS --> TRIAL[Website Trial]
+        SOCIAL --> TRIAL
+        DISCORD --> TRIAL
+        
+        TRIAL --> NPM[npm Installs]
+        NPM --> GITHUB[GitHub Activity]
+        GITHUB --> COMMUNITY[Community Growth]
+    end
+    
+    COMMUNITY --> CC[Content Ideas]
+    
+    style CC fill:#00D9FF
+    style TRIAL fill:#00FF85
+    style DISCORD fill:#5865F2

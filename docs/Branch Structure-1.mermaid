@@ -1,0 +1,31 @@
+erDiagram
+    users ||--o{ projects : "creates"
+    users ||--o{ user_achievements : "unlocks"
+    users ||--o{ commands : "executes"
+    users ||--o{ team_members : "belongs to"
+    
+    projects ||--o{ ai_agents : "has"
+    projects ||--o{ tasks : "contains"
+    projects ||--o{ commands : "associated with"
+    
+    teams ||--o{ team_members : "has"
+    teams ||--o{ projects : "contains"
+    
+    achievements ||--o{ user_achievements : "unlocked by"
+    
+    tasks }o--|| projects : "belongs to"
+    tasks }o--|| users : "assigned to"
+    tasks }o--|| ai_agents : "assigned to"
+    
+    ai_agents }o--|| projects : "belongs to"
+    ai_agents }o--o{ commands : "assists with"
+    
+    %% Analytics tables
+    users ||--o{ page_views : "generates"
+    users ||--o{ conversion_events : "triggers"
+    
+    %% Foreign key relationships
+    projects }o--|| users : "created by"
+    commands }o--|| users : "executed by"
+    commands }o--o| projects : "executed in"
+    commands }o--o| ai_agents : "assisted by"

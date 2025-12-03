@@ -1,0 +1,25 @@
+graph TD
+    A[Daily Login] --> B{Streak Active?}
+    B -->|Yes| C{Consecutive Day?}
+    B -->|No| D[Start Streak: Day 1]
+    C -->|Yes| E[Increment Streak]
+    C -->|No| F[Reset to Day 1]
+    
+    D --> G[Base XP: 50]
+    E --> H[Calculate Bonus]
+    F --> I[Reset Bonuses]
+    
+    H --> J{Streak Length}
+    J -->|7 days| K[Weekly Bonus: 500 XP]
+    J -->|30 days| L[Monthly Bonus: 2,000 XP]
+    J -->|90 days| M[Quarterly Bonus: 10,000 XP]
+    
+    G --> N[Update Dashboard]
+    K --> N
+    L --> N
+    M --> N
+    I --> N
+    
+    style K fill:#00D9FF
+    style L fill:#A020F0
+    style M fill:#00FF85

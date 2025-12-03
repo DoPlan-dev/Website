@@ -1,0 +1,37 @@
+flowchart TD
+    U[User Issue] --> D{Diagnose Type}
+    
+    D -->|Installation| I[Install Guide]
+    D -->|Command Error| C[Command Reference]
+    D -->|Performance| P[Performance Tips]
+    D -->|Bug Report| B[Bug Template]
+    
+    I --> S1[Check system requirements]
+    S1 --> S2[Verify installation]
+    S2 --> S3[Test basic commands]
+    
+    C --> T1[Check command syntax]
+    T1 --> T2[Review parameters]
+    T2 --> T3[Check permissions]
+    
+    P --> R1[Clear cache]
+    R1 --> R2[Update CLI]
+    R2 --> R3[Check system resources]
+    
+    B --> G1[Gather details]
+    G1 --> G2[Reproduce issue]
+    G2 --> G3[Submit to GitHub]
+    
+    S3 --> F{Issue Resolved?}
+    T3 --> F
+    R3 --> F
+    G3 --> F
+    
+    F -->|Yes| Y[Mark Solved]
+    F -->|No| N[Escalate to Support]
+    
+    Y --> Z[Update Documentation]
+    N --> W[Assign to Engineer]
+    
+    style Y fill:#00FF85
+    style N fill:#FFB84D

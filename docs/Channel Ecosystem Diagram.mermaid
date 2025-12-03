@@ -1,0 +1,86 @@
+flowchart TD
+    subgraph "🎯 CORE PRODUCT CHANNELS"
+        direction LR
+        A[🌐 Official Website] --> B[📚 Documentation]
+        A --> C[🔄 GitHub]
+        A --> D[📦 npm Registry]
+        
+        B --> E[User Education & Support]
+        C --> F[Open Source Community]
+        D --> G[Package Distribution]
+    end
+
+    subgraph "🗣️ COMMUNITY & SOCIAL"
+        H[💬 Discord Community] --> I[Real-time Support]
+        H --> J[Community Building]
+        
+        K[🐦 X/Twitter] --> L[Announcements]
+        K --> M[Developer Engagement]
+        
+        N[📸 Instagram] --> O[Brand Personality]
+        N --> P[Behind-the-Scenes]
+        
+        Q[🎥 YouTube] --> R[Video Tutorials]
+        Q --> S[Demos & Walkthroughs]
+        
+        T[👔 LinkedIn] --> U[B2B Outreach]
+        T --> V[Team Hiring]
+    end
+
+    subgraph "📝 CONTENT & EDUCATION"
+        W[✍️ Blog/Dev.to] --> X[Technical Articles]
+        W --> Y[Case Studies]
+        
+        Z[📰 Newsletter] --> AA[Updates & Tips]
+        Z --> AB[Curated Content]
+        
+        AC[🎧 Podcast] --> AD[Industry Insights]
+        AC --> AE[Expert Interviews]
+    end
+
+    subgraph "📊 GROWTH & FEEDBACK"
+        AF[🚀 Product Hunt] --> AG[Launch Platform]
+        AF --> AH[Early Adopters]
+        
+        AI[💡 Feedback Board] --> AJ[Feature Requests]
+        AI --> AK[Voting & Prioritization]
+        
+        AL[🤝 Partner Program] --> AM[Integration Partners]
+        AL --> AN[Affiliate Marketing]
+    end
+
+    subgraph "🎮 GAMIFICATION & ENGAGEMENT"
+        AO[🏆 Leaderboards] --> AP[Public Recognition]
+        AO --> AQ[Competitive Motivation]
+        
+        AR[🎯 Challenges] --> AS[Skill Development]
+        AR --> AT[Community Events]
+        
+        AU[📜 Contribution Board] --> AV[Open Source Credits]
+        AU --> AW[Community Recognition]
+    end
+
+    %% Core Connections
+    A --> H
+    A --> K
+    C --> H
+    B --> Q
+    D --> C
+    
+    %% Content Flow
+    W --> Z
+    Q --> W
+    H --> AI
+    
+    %% Growth Loops
+    F --> AU
+    AP --> H
+    AG --> A
+
+    style A fill:#00D9FF
+    style C fill:#24292e
+    style H fill:#5865F2
+    style K fill:#000000
+    style Q fill:#FF0000
+    style T fill:#0A66C2
+    style AF fill:#DA552F

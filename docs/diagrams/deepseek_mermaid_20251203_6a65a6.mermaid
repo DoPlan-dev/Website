@@ -1,0 +1,43 @@
+graph TB
+    subgraph "Core Commands"
+        C1[/hey]
+        C2[/do]
+        C3[/plan]
+        C4[/dev]
+        C5[/sys]
+    end
+    
+    subgraph "Helper Commands"
+        H1[/help]
+        H2[/config]
+        H3[/stats]
+        H4[/export]
+        H5[/import]
+    end
+    
+    subgraph "Team Commands"
+        T1[/team add]
+        T2[/team invite]
+        T3[/team sync]
+        T4[/team stats]
+    end
+    
+    subgraph "AI Agent Commands"
+        A1[/agent list]
+        A2[/agent ask]
+        A3[/agent train]
+        A4[/agent config]
+    end
+    
+    C1 --> H1
+    C2 --> A2
+    C3 --> C4
+    C4 --> C5
+    C5 --> H3
+    C5 --> H4
+    
+    style C1 fill:#00D9FF
+    style C2 fill:#A020F0
+    style C3 fill:#00FF85
+    style C4 fill:#FFB84D
+    style C5 fill:#FF4D4D
