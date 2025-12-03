@@ -4,7 +4,7 @@
   "user_experience": "intermediate",
   "speed": "standard",
   "total_phases": 4,
-  "current_phase": 3,
+  "current_phase": 6,
   "phases": [
     {
       "phase": 1,
@@ -70,7 +70,7 @@
       "phase": 3,
       "name": "Experience, UI/UX & Tech",
       "start_time": "2025-12-03T20:25:29Z",
-      "end_time": null,
+      "end_time": "2025-12-03T23:01:13Z",
       "questions": [
         {
           "question": "What is the ideal user experience for website visitors?",
@@ -87,8 +87,49 @@
         {
           "question": "What are the technical requirements for the website?",
           "answer": "Performance: Load time targets less than 1 second. Scalability: 1000+ daily visitors. Integration: heatmap, 8n8 chat, automation. Core Web Vitals: To be determined based on best practices (target: LCP < 2.5s, FID < 100ms, CLS < 0.1)."
+        },
+        {
+          "question": "What technology stack should we use for the website?",
+          "answer": "React, Tailwind CSS, Framer Motion, CSS animations. Hosting: Vercel."
+        },
+        {
+          "question": "What are the design constraints for the website?",
+          "answer": "Browser support: Chrome, Safari, Firefox, Edge (all modern browsers). WCAG AA compliance as per design system. Mobile-first responsive design."
         }
       ]
+    },
+    {
+      "phase": 6,
+      "name": "Delivery, Ops & Risks",
+      "start_time": "2025-12-03T23:01:59Z",
+      "end_time": "2025-12-03T23:15:56Z",
+      "questions": [
+        {
+          "question": "What is the delivery timeline for the website?",
+          "answer": "MVP: Tomorrow. Full launch: After 5 days (5 days from now)."
+        },
+        {
+          "question": "What are the operational requirements for the website?",
+          "answer": "Hosting: Vercel with automatic deployments. Monitoring: Uptime, errors, performance. Backup: Monthly backups."
+        },
+        {
+          "question": "What are the main risks for this website project?",
+          "answer": "Tight timeline might cause quality issues."
+        },
+        {
+          "question": "How will we mitigate the risks?",
+          "answer": "Prioritize MVP features, defer nice-to-haves. Focus on core conversion path first. Use existing design system to speed up development. Post-launch iteration plan for improvements."
+        },
+        {
+          "question": "What are the success criteria for launch?",
+          "answer": "Load time <1s. 98% speed test. Website home and features pages. GitHub repo link. Make sure to do our best to turn visitor to User."
+        },
+        {
+          "question": "What is the maintenance plan for the website?",
+          "answer": "Updates will happen with releases. Website updates will be a small part from CLI updates and part have to be done in CLI updates. CLI team will do it. Quarterly updates."
+        }
+      ]
+    }
     }
     }
     }

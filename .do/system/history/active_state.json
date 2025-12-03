@@ -2,5 +2,43 @@
   "active_task": null,
   "completed": [],
   "locked": false,
-  "phase": "idea"
+  "phase": "tasks",
+  "plan_generated": true,
+  "plan_date": "2025-12-03",
+  "phases": [
+    {
+      "name": "01-Foundation",
+      "status": "pending",
+      "features": [
+        "01-Project-Setup",
+        "02-Design-System",
+        "03-Core-Layout",
+        "04-Hero-Section",
+        "05-Commands-Section",
+        "06-Responsive-Design"
+      ]
+    },
+    {
+      "name": "02-Content-Features",
+      "status": "pending",
+      "features": [
+        "01-Features-Page",
+        "02-Documentation",
+        "03-Conversion-Optimization",
+        "04-Content-Enhancement"
+      ]
+    },
+    {
+      "name": "03-Optimization-Polish",
+      "status": "pending",
+      "features": [
+        "01-Performance",
+        "02-SEO",
+        "03-Integrations",
+        "04-Accessibility",
+        "05-Browser-Testing",
+        "06-Monitoring"
+      ]
+    }
+  ]
 }
