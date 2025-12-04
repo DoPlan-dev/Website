@@ -21,7 +21,7 @@ export const CTASection: React.FC = () => {
             Ready to Build Production Apps?
           </h2>
           <p className="text-body md:text-h3 text-light/90 mb-xl max-w-2xl mx-auto">
-            Join 50,000+ developers using DoPlan CLI to build faster, learn better, and ship production-ready apps.
+            Join 50,000+ developers using DoPlan CLI to build faster, learn better, and ship production-ready apps. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-m justify-center items-center">
             <Button
@@ -29,14 +29,14 @@ export const CTASection: React.FC = () => {
               onClick={handleGetStarted}
               className="w-full sm:w-auto sm:min-w-[200px] bg-light text-void hover:bg-light/90"
             >
-              Get Started Now
+              Get Started Free →
             </Button>
             <Button
               variant="secondary"
               onClick={handleViewDocs}
               className="w-full sm:w-auto sm:min-w-[200px] border-light text-light hover:bg-light/10"
             >
-              View Documentation
+              Read the Docs
             </Button>
           </div>
         </div>

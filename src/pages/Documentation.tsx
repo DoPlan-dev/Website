@@ -240,9 +240,9 @@ export const Documentation: React.FC = () => {
           {/* Main Content */}
           <div className="lg:col-span-3">
             <div className="mb-xl md:mb-xxl">
-              <h1 className="text-h1 md:text-hero mb-m">Documentation</h1>
+              <h1 className="text-h1 md:text-hero mb-m">Complete Command Reference</h1>
               <p className="text-body md:text-h3 text-mid max-w-3xl">
-                Complete guide to DoPlan CLI commands. Learn how to use each command and its sub-commands to build production apps efficiently.
+                Master all 5 commands and their sub-commands. Learn how to build production apps faster with step-by-step guides and examples.
               </p>
             </div>
 

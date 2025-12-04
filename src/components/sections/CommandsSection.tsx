@@ -142,7 +142,7 @@ export const CommandsSection: React.FC = () => {
             }}
             className="w-full sm:w-auto"
           >
-            Get Started Now
+            Start Building Now →
           </Button>
           <Button
             variant="secondary"
@@ -152,7 +152,7 @@ export const CommandsSection: React.FC = () => {
             }}
             className="w-full sm:w-auto"
           >
-            View Documentation
+            Learn the Commands
           </Button>
         </div>
       </div>

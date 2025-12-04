@@ -60,10 +60,10 @@ export const Hero: React.FC = () => {
                 </span>
               </h1>
               <p className="text-body md:text-h3 text-mid mb-l">
-                Personalized AI assistance with 18 specialized agents. 98% success rate.
+                Personalized AI assistance with 18 specialized agents. 98% success rate. Start building in seconds.
               </p>
               <p className="text-body text-mid">
-                Turn your ideas into real products. Learn as you build. Never get lost.
+                Turn your ideas into production-ready apps. Learn as you build. Never get lost or stuck.
               </p>
             </div>
 
@@ -84,7 +84,7 @@ export const Hero: React.FC = () => {
 
             {/* Install Command with Copy Button */}
             <div>
-              <p className="text-small text-mid mb-s">Get started in seconds:</p>
+              <p className="text-small text-mid mb-s">Install and start building in seconds:</p>
               <div className="flex flex-col sm:flex-row gap-m items-stretch sm:items-center">
                 <div className="flex-1 terminal-container p-m">
                   <code className="text-terminal text-cyan">{installCommand}</code>
@@ -113,7 +113,7 @@ export const Hero: React.FC = () => {
                 }}
                 className="w-full sm:w-auto"
               >
-                View on GitHub
+                Star on GitHub
               </Button>
             </div>
           </div>

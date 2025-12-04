@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
+import { trackCTAClick } from '../lib/analytics'
 
 interface Feature {
   title: string
@@ -292,19 +293,21 @@ export const Features: React.FC = () => {
               variant="primary"
               onClick={() => {
                 window.location.href = '#home'
+                trackCTAClick('get-started', 'features-cta')
               }}
               className="w-full sm:w-auto"
             >
-              Get Started Now
+              Start Building Free →
             </Button>
             <Button
               variant="secondary"
               onClick={() => {
                 window.open('https://github.com/DoPlan-dev/Website', '_blank')
+                trackCTAClick('github', 'features-cta')
               }}
               className="w-full sm:w-auto"
             >
-              View on GitHub
+              Star on GitHub
             </Button>
           </div>
           </div>
