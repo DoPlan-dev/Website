@@ -3,6 +3,7 @@ import { Layout } from './components/layout/Layout'
 import { Hero } from './components/sections/Hero'
 import { CommandsSection } from './components/sections/CommandsSection'
 import { CTASection } from './components/sections/CTASection'
+import { StructuredData } from './components/seo/StructuredData'
 import { trackPageView } from './lib/analytics'
 
 // Lazy load below-fold content
@@ -16,20 +17,23 @@ function App() {
   }, [])
 
   return (
-    <Layout>
-      <Hero />
-      <CommandsSection />
-      <Suspense fallback={<div className="min-h-screen" />}>
-        <Features />
-      </Suspense>
-      <CTASection />
-      <Suspense fallback={<div className="min-h-screen" />}>
-        <Documentation />
-      </Suspense>
-      <Suspense fallback={null}>
-        <FAQSection />
-      </Suspense>
-    </Layout>
+    <>
+      <StructuredData />
+      <Layout>
+        <Hero />
+        <CommandsSection />
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <Features />
+        </Suspense>
+        <CTASection />
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <Documentation />
+        </Suspense>
+        <Suspense fallback={null}>
+          <FAQSection />
+        </Suspense>
+      </Layout>
+    </>
   )
 }
 
