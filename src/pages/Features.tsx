@@ -159,9 +159,9 @@ export const Features: React.FC = () => {
             visibleSections[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             {keyFeatures.map((feature, index) => (
-              <Card key={index} className="h-full hover:border-cyan/50 cursor-pointer group">
+              <Card key={index} className="h-full hover:border-cyan/50 cursor-pointer group focus-within:ring-2 focus-within:ring-cyan focus-within:ring-offset-2 focus-within:ring-offset-void">
                 <div className="flex items-start gap-m mb-m">
-                  <span className="text-4xl" aria-hidden="true">
+                  <span className="text-4xl" aria-hidden="true" role="img" aria-label={`${feature.title} feature icon`}>
                     {feature.icon}
                   </span>
                   <div className="flex-1">
@@ -193,12 +193,12 @@ export const Features: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-l md:gap-xl max-w-7xl mx-auto">
             {aiAgents.map((agent, index) => (
-              <Card key={index} className="hover:border-cyan/50 cursor-pointer group">
+              <Card key={index} className="hover:border-cyan/50 cursor-pointer group focus-within:ring-2 focus-within:ring-cyan focus-within:ring-offset-2 focus-within:ring-offset-void">
                 <div className="mb-s">
                   <h3 className="text-h4 mb-xs group-hover:text-cyan transition-all duration-standard ease-smooth">
                     {agent.name}
                   </h3>
-                  <p className="text-small text-cyan mb-s">{agent.role}</p>
+                  <p className="text-small text-cyan mb-s" aria-label={`Role: ${agent.role}`}>{agent.role}</p>
                 </div>
                 <p className="text-body text-mid">{agent.description}</p>
               </Card>

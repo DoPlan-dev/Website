@@ -105,16 +105,16 @@ export const CommandsSection: React.FC = () => {
               visibleCards[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             } ${index >= 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}
           >
-            <Card className="h-full hover:border-cyan/50 cursor-pointer group">
+            <Card className="h-full hover:border-cyan/50 cursor-pointer group focus-within:ring-2 focus-within:ring-cyan focus-within:ring-offset-2 focus-within:ring-offset-void">
               <div className="flex items-start gap-m mb-m">
-                <span className="text-4xl" aria-hidden="true">
+                <span className="text-4xl" aria-hidden="true" role="img" aria-label={`${command.name} command icon`}>
                   {command.icon}
                 </span>
                 <div className="flex-1">
                   <h3 className="text-h4 mb-s group-hover:text-cyan transition-all duration-standard ease-smooth">
                     {command.name}
                   </h3>
-                  <code className="text-code text-cyan/80 text-small">
+                  <code className="text-code text-cyan/80 text-small" aria-label={`Usage: ${command.usage}`}>
                     {command.usage}
                   </code>
                 </div>
@@ -124,7 +124,7 @@ export const CommandsSection: React.FC = () => {
 
               <div className="mt-auto pt-m border-t border-cyan/20">
                 <p className="text-small text-mid">
-                  <span className="text-cyan">Example:</span> {command.example}
+                  <span className="text-cyan font-semibold">Example:</span> <span aria-label={`Example: ${command.example}`}>{command.example}</span>
                 </p>
               </div>
             </Card>

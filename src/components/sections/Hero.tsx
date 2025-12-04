@@ -70,11 +70,13 @@ export const Hero: React.FC = () => {
             {/* 5 Commands Display */}
             <div>
               <p className="text-small text-mid mb-m">5 Sacred Commands:</p>
-              <div className="flex flex-wrap gap-s mb-xl">
+              <div className="flex flex-wrap gap-s mb-xl" role="list" aria-label="5 Sacred Commands">
                 {commands.map((cmd) => (
                   <code
                     key={cmd}
                     className="text-code px-m py-s bg-void border border-cyan/30 rounded-moderate text-cyan"
+                    role="listitem"
+                    aria-label={`Command: ${cmd}`}
                   >
                     {cmd}
                   </code>
@@ -86,7 +88,7 @@ export const Hero: React.FC = () => {
             <div>
               <p className="text-small text-mid mb-s">Install and start building in seconds:</p>
               <div className="flex flex-col sm:flex-row gap-m items-stretch sm:items-center">
-                <div className="flex-1 terminal-container p-m">
+                <div className="flex-1 terminal-container p-m" role="textbox" aria-label="Install command">
                   <code className="text-terminal text-cyan">{installCommand}</code>
                 </div>
                 <Button

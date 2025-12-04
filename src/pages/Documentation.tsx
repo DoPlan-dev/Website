@@ -221,11 +221,18 @@ export const Documentation: React.FC = () => {
                   <button
                     key={cmd.name}
                     onClick={() => scrollToCommand(cmd.name)}
-                    className={`w-full text-left px-m py-m rounded-moderate transition-all duration-standard ease-smooth min-h-[48px] flex items-center ${
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault()
+                        scrollToCommand(cmd.name)
+                      }
+                    }}
+                    className={`w-full text-left px-m py-m rounded-moderate transition-all duration-standard ease-smooth min-h-[48px] flex items-center focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-2 focus:ring-offset-void ${
                       selectedCommand === cmd.name
                         ? 'bg-cyan/20 text-cyan border border-cyan/30'
                         : 'text-mid hover:text-cyan hover:bg-void/50'
                     }`}
+                    aria-current={selectedCommand === cmd.name ? 'page' : undefined}
                   >
                     <div className="flex items-center gap-s">
                       <span>{cmd.icon}</span>
@@ -254,9 +261,9 @@ export const Documentation: React.FC = () => {
                   ref={(el) => (commandRefs.current[cmd.name] = el)}
                   className="scroll-mt-24"
                 >
-                  <Card className="p-xl md:p-xxl">
+                  <Card className="p-xl md:p-xxl focus-within:ring-2 focus-within:ring-cyan focus-within:ring-offset-2 focus-within:ring-offset-void">
                     <div className="flex items-start gap-m mb-xl">
-                      <span className="text-4xl md:text-5xl" aria-hidden="true">
+                      <span className="text-4xl md:text-5xl" aria-hidden="true" role="img" aria-label={`${cmd.name} command icon`}>
                         {cmd.icon}
                       </span>
                       <div className="flex-1">
@@ -277,18 +284,20 @@ export const Documentation: React.FC = () => {
                             <div
                               key={subCmd.name}
                               className="p-m bg-void/50 border border-cyan/10 rounded-moderate"
+                              role="article"
+                              aria-labelledby={`subcmd-${cmd.name}-${subCmd.name}`}
                             >
                               <div className="flex items-start gap-s mb-s">
-                                <code className="text-code text-cyan break-all">{subCmd.name}</code>
+                                <code id={`subcmd-${cmd.name}-${subCmd.name}`} className="text-code text-cyan break-all" aria-label={`Sub-command: ${subCmd.name}`}>{subCmd.name}</code>
                               </div>
                               <p className="text-small text-mid mb-s">{subCmd.description}</p>
-                              <code className="text-code text-cyan/60 text-tiny block mb-s break-all">
+                              <code className="text-code text-cyan/60 text-tiny block mb-s break-all" aria-label={`Usage: ${subCmd.usage}`}>
                                 {subCmd.usage}
                               </code>
                               {subCmd.example && (
                                 <div className="mt-s">
-                                  <p className="text-tiny text-mid mb-xs">Example:</p>
-                                  <code className="text-code text-cyan/80 text-tiny block break-all">
+                                  <p className="text-tiny text-mid mb-xs font-semibold">Example:</p>
+                                  <code className="text-code text-cyan/80 text-tiny block break-all" aria-label={`Example: ${subCmd.example}`}>
                                     {subCmd.example}
                                   </code>
                                 </div>
@@ -303,10 +312,12 @@ export const Documentation: React.FC = () => {
                     <div>
                       <h3 className="text-h4 mb-l">Examples</h3>
                       <div className="space-y-m">
-                        {cmd.examples.map((example, index) => (
+                        {cmd.examples.map((example, exampleIndex) => (
                           <div
-                            key={index}
+                            key={exampleIndex}
                             className="p-m bg-[#050A1A] border border-cyan/20 rounded-moderate overflow-x-auto"
+                            role="code"
+                            aria-label={`Example ${exampleIndex + 1}: ${example.substring(0, 50)}${example.length > 50 ? '...' : ''}`}
                           >
                             <code className="text-terminal text-cyan whitespace-pre">{example}</code>
                           </div>

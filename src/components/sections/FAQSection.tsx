@@ -63,11 +63,18 @@ export const FAQSection: React.FC = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left p-xl"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    toggleFAQ(index)
+                  }
+                }}
+                className="w-full text-left p-xl focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-2 focus:ring-offset-void rounded-moderate"
                 aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
                 <div className="flex items-center justify-between gap-m">
-                  <h3 className="text-h4 text-light pr-m">{faq.question}</h3>
+                  <h3 id={`faq-question-${index}`} className="text-h4 text-light pr-m">{faq.question}</h3>
                   <span
                     className={`text-cyan text-2xl transition-transform duration-standard ease-smooth flex-shrink-0 ${
                       openIndex === index ? 'rotate-180' : ''
@@ -77,7 +84,7 @@ export const FAQSection: React.FC = () => {
                   </span>
                 </div>
                 {openIndex === index && (
-                  <div className="mt-m pt-m border-t border-cyan/20">
+                  <div id={`faq-answer-${index}`} className="mt-m pt-m border-t border-cyan/20" role="region" aria-labelledby={`faq-question-${index}`}>
                     <p className="text-body text-mid">{faq.answer}</p>
                   </div>
                 )}

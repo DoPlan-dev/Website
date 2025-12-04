@@ -24,15 +24,15 @@ export const Terminal: React.FC<TerminalProps> = ({
       </div>
 
       {/* Terminal Content */}
-      <div className="terminal-content">
+      <div className="terminal-content" role="log" aria-label="Terminal output">
         {command && (
           <div className="mb-s">
-            <span className="text-success">$</span>{' '}
-            <span className="text-cyan">{command}</span>
+            <span className="text-success" aria-hidden="true">$</span>{' '}
+            <span className="text-cyan" aria-label={`Command: ${command}`}>{command}</span>
           </div>
         )}
         {output.map((line, index) => (
-          <div key={index} className="text-mid">
+          <div key={index} className="text-mid" aria-label={line || 'Empty line'}>
             {line}
           </div>
         ))}
