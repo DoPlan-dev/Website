@@ -2,7 +2,7 @@
 
 /* Button Base Styles */
 .btn-base {
-  @apply font-bold rounded-large transition-standard;
+  @apply font-bold rounded-large transition-all duration-standard ease-smooth;
   @apply focus:outline-none focus:ring-2 focus:ring-cyan focus:ring-offset-2 focus:ring-offset-void;
   @apply disabled:opacity-50 disabled:cursor-not-allowed;
 }
@@ -47,7 +47,7 @@
   @apply bg-void rounded-large;
   @apply border border-cyan/30;
   @apply shadow-elevation-2;
-  @apply transition-standard;
+  @apply transition-all duration-standard ease-smooth;
 }
 
 .card-base:hover {
@@ -107,7 +107,7 @@
   @apply text-light placeholder-mid;
   @apply px-m py-s;
   @apply focus:outline-none focus:ring-2 focus:ring-cyan focus:border-cyan;
-  @apply transition-standard;
+  @apply transition-all duration-standard ease-smooth;
 }
 
 .input-base:focus {
@@ -116,7 +116,7 @@
 
 /* Achievement Badge */
 .achievement-badge {
-  @apply w-22 h-22 rounded-moderate;
+  @apply w-[88px] h-[88px] rounded-moderate;
   @apply bg-gradient-achievement;
   @apply border-2 border-success;
   @apply shadow-glow-secondary;
@@ -126,43 +126,61 @@
 
 /* Typography Utilities */
 .text-hero {
-  @apply text-hero font-bold leading-tight;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .text-h1 {
-  @apply text-h1 font-bold leading-tight;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .text-h2 {
-  @apply text-h2 font-bold;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .text-h3 {
-  @apply text-h3 font-semibold;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .text-h4 {
-  @apply text-h4 font-semibold;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .text-body {
-  @apply text-body leading-relaxed;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .text-small {
-  @apply text-small;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .text-tiny {
-  @apply text-tiny font-medium;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .text-code {
-  @apply font-mono text-code;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .text-terminal {
-  @apply font-mono text-terminal;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
 /* Spacing Utilities (8px grid) */

@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 href="https://github.com/DoPlan-dev/Website"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-mid hover:text-cyan transition-standard p-s min-h-[48px] min-w-[48px] flex items-center justify-center"
+                className="text-mid hover:text-cyan transition-all duration-standard ease-smooth p-s min-h-[48px] min-w-[48px] flex items-center justify-center"
                 aria-label="GitHub"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 <li key={link.href}>
               <a
                 href={link.href}
-                className="text-body text-mid hover:text-cyan transition-standard py-s min-h-[48px] flex items-center"
+                className="text-body text-mid hover:text-cyan transition-all duration-standard ease-smooth py-s min-h-[48px] flex items-center"
               >
                 {link.label}
               </a>
@@ -74,7 +74,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 <li key={link.href}>
               <a
                 href={link.href}
-                className="text-body text-mid hover:text-cyan transition-standard py-s min-h-[48px] flex items-center"
+                className="text-body text-mid hover:text-cyan transition-all duration-standard ease-smooth py-s min-h-[48px] flex items-center"
               >
                 {link.label}
               </a>

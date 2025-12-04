@@ -106,7 +106,7 @@ export const CommandsSection: React.FC = () => {
                   {command.icon}
                 </span>
                 <div className="flex-1">
-                  <h3 className="text-h4 mb-s group-hover:text-cyan transition-standard">
+                  <h3 className="text-h4 mb-s group-hover:text-cyan transition-all duration-standard ease-smooth">
                     {command.name}
                   </h3>
                   <code className="text-code text-cyan/80 text-small">

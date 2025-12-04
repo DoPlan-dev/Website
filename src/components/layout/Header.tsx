@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-standard ${
+      className={`sticky top-0 z-50 transition-all duration-standard ease-smooth ${
         isScrolled
           ? 'bg-void/95 backdrop-blur-sm border-b border-cyan/20 shadow-elevation-1'
           : 'bg-transparent'
@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           {/* Logo */}
           <a
             href="#home"
-            className="text-h4 md:text-h3 font-bold text-light hover:text-cyan transition-standard"
+            className="text-h4 md:text-h3 font-bold text-light hover:text-cyan transition-all duration-standard ease-smooth"
             aria-label="DoPlan.dev Home"
           >
             DoPlan.dev
@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-body text-mid hover:text-cyan transition-standard py-m min-h-[48px] flex items-center"
+                className="text-body text-mid hover:text-cyan transition-all duration-standard ease-smooth py-m min-h-[48px] flex items-center"
               >
                 {link.label}
               </a>
@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-m text-light hover:text-cyan transition-standard focus:outline-none focus:ring-2 focus:ring-cyan rounded-moderate min-h-[48px] min-w-[48px] flex items-center justify-center"
+            className="md:hidden p-m text-light hover:text-cyan transition-all duration-standard ease-smooth focus:outline-none focus:ring-2 focus:ring-cyan rounded-moderate min-h-[48px] min-w-[48px] flex items-center justify-center"
             aria-label="Toggle mobile menu"
             aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-body text-mid hover:text-cyan transition-standard py-m min-h-[48px] flex items-center"
+                  className="text-body text-mid hover:text-cyan transition-all duration-standard ease-smooth py-m min-h-[48px] flex items-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -107,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 href="https://github.com/DoPlan-dev/Website"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-body text-mid hover:text-cyan transition-standard py-m min-h-[48px] flex items-center"
+                className="text-body text-mid hover:text-cyan transition-all duration-standard ease-smooth py-m min-h-[48px] flex items-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 GitHub
