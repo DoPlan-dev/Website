@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Card } from '../ui/Card'
+import { Button } from '../ui/Button'
+import { trackCTAClick } from '../../lib/analytics'
 
 interface Command {
   name: string
@@ -128,9 +130,31 @@ export const CommandsSection: React.FC = () => {
       </div>
 
       <div className="mt-xxl text-center">
-        <p className="text-body text-mid">
+        <p className="text-body text-mid mb-xl">
           Each command activates specialized AI agents to guide you through your project journey.
         </p>
+        <div className="flex flex-col sm:flex-row gap-m justify-center items-center">
+          <Button
+            variant="primary"
+            onClick={() => {
+              window.location.href = '#home'
+              trackCTAClick('get-started', 'commands-section')
+            }}
+            className="w-full sm:w-auto"
+          >
+            Get Started Now
+          </Button>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              window.location.href = '#docs'
+              trackCTAClick('view-docs', 'commands-section')
+            }}
+            className="w-full sm:w-auto"
+          >
+            View Documentation
+          </Button>
+        </div>
       </div>
     </section>
   )

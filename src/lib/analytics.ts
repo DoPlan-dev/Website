@@ -26,3 +26,11 @@ export const trackCTAClick = (type: string, location: string) => {
   trackEvent('cta_clicked', { type, location })
 }
 
+export const trackFAQToggle = (question: string, isOpen: boolean) => {
+  trackEvent('faq_toggle', { question, isOpen })
+}
+
+export const trackSectionView = (section: string) => {
+  trackEvent('section_view', { section })
+}
+
