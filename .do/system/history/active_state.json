@@ -1,7 +1,7 @@
 {
-  "active_task": "2.4",
-  "active_branch": "task/2.4",
-  "completed": ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "2.1", "2.2", "2.3"],
+  "active_task": null,
+  "active_branch": null,
+  "completed": ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "2.1", "2.2", "2.3", "2.4"],
   "locked": false,
   "phase": "tasks",
   "plan_generated": true,
