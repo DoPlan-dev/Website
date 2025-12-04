@@ -59,17 +59,17 @@ High-conversion marketing website to convert visitors into DoPlan CLI users. MVP
 
 **Estimated Time:** 4-5 hours
 
-### 1.4 Hero Section
-- [ ] Design and implement hero section layout
-- [ ] Create headline and subheadline components
-- [ ] Implement 5 commands display
-- [ ] Create terminal visual component
-- [ ] Implement copy-to-clipboard button for install command
-- [ ] Add command copy functionality with feedback
-- [ ] Implement floating terminal animation
-- [ ] Add background gradient effects
-- [ ] Ensure mobile responsiveness
-- [ ] Optimize for <1s load time
+### 1.4 Hero Section ✅ Complete
+- [x] Design and implement hero section layout
+- [x] Create headline and subheadline components
+- [x] Implement 5 commands display
+- [x] Create terminal visual component
+- [x] Implement copy-to-clipboard button for install command
+- [x] Add command copy functionality with feedback
+- [x] Implement floating terminal animation
+- [x] Add background gradient effects
+- [x] Ensure mobile responsiveness
+- [x] Optimize for <1s load time
 
 **Estimated Time:** 6-8 hours
 

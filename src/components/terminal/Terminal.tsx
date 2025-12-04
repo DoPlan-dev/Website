@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface TerminalProps extends React.HTMLAttributes<HTMLDivElement> {
+interface TerminalProps {
   command?: string
   output?: string[]
   className?: string
@@ -12,7 +12,7 @@ export const Terminal: React.FC<TerminalProps> = ({
   className = '',
 }) => {
   return (
-    <div className={`terminal-container ${className}`}>
+    <div className={`terminal-container max-w-[480px] ${className}`}>
       {/* Terminal Header */}
       <div className="terminal-header">
         <div className="terminal-controls">
@@ -20,7 +20,7 @@ export const Terminal: React.FC<TerminalProps> = ({
           <div className="terminal-control-yellow" aria-hidden="true"></div>
           <div className="terminal-control-green" aria-hidden="true"></div>
         </div>
-        <span className="text-tiny text-mid ml-auto">Terminal</span>
+        <span className="text-tiny text-mid ml-m">Terminal</span>
       </div>
 
       {/* Terminal Content */}
@@ -40,4 +40,3 @@ export const Terminal: React.FC<TerminalProps> = ({
     </div>
   )
 }
-

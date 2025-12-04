@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Terminal } from '../terminal/Terminal'
 import { Button } from '../ui/Button'
 import { copyToClipboard } from '../../utils/clipboard'
-import { trackCommandCopy } from '../../lib/analytics'
+import { trackCommandCopy, trackCTAClick } from '../../lib/analytics'
 
 export const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false)
@@ -17,12 +17,25 @@ export const Hero: React.FC = () => {
     }
   }
 
+  const handleGetStarted = () => {
+    trackCTAClick('get-started', 'hero')
+    // Scroll to install section or trigger install
+  }
+
   const commands = ['/hey', '/do', '/plan', '/dev', '/sys']
+
+  const terminalOutput = [
+    '✓ DoPlan CLI initialized',
+    '✓ 18 AI agents ready',
+    '✓ Project structure created',
+    '',
+    'Ready to build! Type /hey to get started.',
+  ]
 
   return (
     <section
       id="home"
-      className="relative min-h-[720px] md:min-h-[600px] flex items-center overflow-hidden"
+      className="relative min-h-[720px] md:min-h-[600px] flex items-center overflow-hidden py-xxl"
     >
       {/* Background Gradient Effects */}
       <div
@@ -35,33 +48,33 @@ export const Hero: React.FC = () => {
 
       <div className="container mx-auto px-xl py-xxl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-xxl items-center">
-          {/* Left Content */}
+          {/* Left Column - Content */}
           <div className="space-y-xl">
             {/* Headline */}
-            <div className="space-y-m">
-              <h1 className="text-hero md:text-h1 font-bold text-light leading-tight">
+            <div>
+              <h1 className="text-hero md:text-h1 mb-m">
                 Build Production Apps
                 <br />
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Without the Burnout
                 </span>
               </h1>
-              <p className="text-h3 text-mid leading-relaxed">
+              <p className="text-h3 text-mid mb-l">
                 Personalized AI assistance with 18 specialized agents. 98% success rate.
               </p>
-              <p className="text-body text-mid leading-relaxed">
+              <p className="text-body text-mid">
                 Turn your ideas into real products. Learn as you build. Never get lost.
               </p>
             </div>
 
             {/* 5 Commands Display */}
-            <div className="space-y-s">
-              <p className="text-small text-mid font-medium">5 Sacred Commands:</p>
-              <div className="flex flex-wrap gap-s">
+            <div>
+              <p className="text-small text-mid mb-m">5 Sacred Commands:</p>
+              <div className="flex flex-wrap gap-s mb-xl">
                 {commands.map((cmd) => (
                   <code
                     key={cmd}
-                    className="text-code bg-void/50 border border-cyan/20 rounded-moderate px-m py-xs text-cyan"
+                    className="text-code px-m py-s bg-void border border-cyan/30 rounded-moderate text-cyan"
                   >
                     {cmd}
                   </code>
@@ -69,89 +82,60 @@ export const Hero: React.FC = () => {
               </div>
             </div>
 
-            {/* CTA Section */}
-            <div className="space-y-m">
-              <div className="flex flex-col sm:flex-row gap-m">
+            {/* Install Command with Copy Button */}
+            <div>
+              <p className="text-small text-mid mb-s">Get started in seconds:</p>
+              <div className="flex flex-col sm:flex-row gap-m items-stretch sm:items-center">
+                <div className="flex-1 terminal-container p-m">
+                  <code className="text-terminal text-cyan">{installCommand}</code>
+                </div>
                 <Button
                   variant="primary"
                   onClick={handleCopyCommand}
-                  className="w-full sm:w-auto"
+                  className="whitespace-nowrap"
+                  aria-label={copied ? 'Copied!' : 'Copy install command'}
                 >
-                  {copied ? (
-                    <>
-                      <svg
-                        className="w-5 h-5 mr-s inline"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path d="M5 13l4 4L19 7" />
-                      </svg>
-                      Copied!
-                    </>
-                  ) : (
-                    <>
-                      <svg
-                        className="w-5 h-5 mr-s inline"
-                        fill="none"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                      </svg>
-                      Copy Install Command
-                    </>
-                  )}
+                  {copied ? '✓ Copied!' : 'Copy'}
                 </Button>
-                <Button
-                  variant="secondary"
-                  onClick={() => {
-                    window.open('https://github.com/DoPlan-dev/Website', '_blank')
-                  }}
-                  className="w-full sm:w-auto"
-                >
-                  View on GitHub
-                </Button>
-              </div>
-
-              {/* Install Command Display */}
-              <div className="bg-void/50 border border-cyan/20 rounded-moderate p-m">
-                <code className="text-code text-cyan font-mono">
-                  {installCommand}
-                </code>
               </div>
             </div>
-          </div>
 
-          {/* Right Content - Terminal Visual (Desktop) */}
-          <div className="hidden md:block relative">
-            <div className="animate-float">
-              <div
-                className="w-full max-w-[480px] mx-auto"
-                style={{
-                  transform: 'perspective(1200px) rotateX(5deg) rotateY(-10deg)',
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-m">
+              <Button variant="primary" onClick={handleGetStarted} className="min-w-[200px]">
+                Get Started Now
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  window.open('https://github.com/DoPlan-dev/Website', '_blank')
+                  trackCTAClick('github', 'hero')
                 }}
               >
-                <Terminal
-                  command={installCommand}
-                  output={[
-                    '✓ DoPlan CLI installed successfully',
-                    '✓ 18 AI agents ready',
-                    '✓ Type /hey to get started',
-                  ]}
-                />
-              </div>
+                View on GitHub
+              </Button>
             </div>
           </div>
+
+          {/* Right Column - Terminal Visual (Desktop Only) */}
+          <div className="hidden md:block relative">
+            <div
+              className="animate-float"
+              style={{
+                perspective: '1200px',
+                transform: 'rotateX(5deg) rotateY(-10deg)',
+              }}
+            >
+              <Terminal command={installCommand} output={terminalOutput} />
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Terminal (Below Content) */}
+        <div className="md:hidden mt-xxl">
+          <Terminal command={installCommand} output={terminalOutput} />
         </div>
       </div>
     </section>
   )
 }
-
