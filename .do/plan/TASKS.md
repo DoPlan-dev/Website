@@ -73,14 +73,14 @@ High-conversion marketing website to convert visitors into DoPlan CLI users. MVP
 
 **Estimated Time:** 6-8 hours
 
-### 1.5 Five Commands Section
-- [ ] Create command cards component
-- [ ] Design interactive command cards
-- [ ] Implement hover/click interactions
-- [ ] Add command explanations
-- [ ] Create visual hierarchy for commands
-- [ ] Implement scroll animations (fade-in)
-- [ ] Ensure mobile responsiveness
+### 1.5 Five Commands Section ✅ Complete
+- [x] Create command cards component
+- [x] Design interactive command cards
+- [x] Implement hover/click interactions
+- [x] Add command explanations
+- [x] Create visual hierarchy for commands
+- [x] Implement scroll animations (fade-in)
+- [x] Ensure mobile responsiveness
 
 **Estimated Time:** 5-6 hours
 
