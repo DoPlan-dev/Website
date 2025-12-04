@@ -23,6 +23,20 @@ High-conversion marketing website for DoPlan CLI - Build Production Apps Without
 npm install
 ```
 
+### Environment Variables
+
+Copy `.env.example` to `.env` and fill in your integration keys (all optional):
+
+```bash
+cp .env.example .env
+```
+
+- `VITE_GA_MEASUREMENT_ID` - Google Analytics Measurement ID
+- `VITE_HEATMAP_SITE_ID` - Heatmap tracking site ID (e.g., Hotjar)
+- `VITE_8N8_API_KEY` - 8n8 chat API key
+
+All integrations are optional and will gracefully handle missing configuration.
+
 ### Development
 
 ```bash
@@ -62,4 +76,3 @@ See `.do/system/DESIGN_SYSTEM.md` for complete design system documentation.
 ## License
 
 Private - DoPlan Team
-
