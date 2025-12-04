@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     <header
       className={`sticky top-0 z-50 transition-all duration-standard ease-smooth ${
         isScrolled
-          ? 'bg-void/95 backdrop-blur-sm border-b border-cyan/20 shadow-elevation-1'
+          ? 'bg-void/95 backdrop-blur-sm border-b border-cyan/20 shadow-elevation-1 supports-[backdrop-filter]:bg-void/80 supports-[backdrop-filter:blur(8px)]:backdrop-blur-sm'
           : 'bg-transparent'
       } ${className}`}
     >

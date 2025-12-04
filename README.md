@@ -73,6 +73,18 @@ src/
 
 See `.do/system/DESIGN_SYSTEM.md` for complete design system documentation.
 
+## Browser Support
+
+This website supports the latest 2 versions of:
+- **Chrome** (desktop and mobile)
+- **Safari** (desktop and iOS)
+- **Firefox** (desktop)
+- **Edge** (desktop)
+
+For detailed browser support information and testing checklist, see:
+- `.do/system/content/browser-testing/BROWSER_SUPPORT.md`
+- `.do/system/content/browser-testing/TESTING_CHECKLIST.md`
+
 ## License
 
 Private - DoPlan Team

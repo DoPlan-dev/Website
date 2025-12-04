@@ -13,6 +13,7 @@ export default defineConfig({
     sourcemap: false,
     minify: 'esbuild',
     cssMinify: true,
+    target: 'es2020', // Support modern browsers (Chrome 90+, Safari 14+, Firefox 88+, Edge 90+)
     rollupOptions: {
       output: {
         manualChunks: {
