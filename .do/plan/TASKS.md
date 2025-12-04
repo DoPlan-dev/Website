@@ -194,14 +194,14 @@ High-conversion marketing website to convert visitors into DoPlan CLI users. MVP
 
 **Estimated Time:** 3-4 hours
 
-### 3.4 Accessibility Audit & Fixes
-- [ ] Run automated accessibility tests (axe DevTools)
-- [ ] Test keyboard navigation
-- [ ] Test with screen readers (NVDA/JAWS)
-- [ ] Fix accessibility issues
-- [ ] Ensure WCAG AA compliance
-- [ ] Test focus indicators
-- [ ] Verify color contrast ratios
+### 3.4 Accessibility Audit & Fixes ✅ Complete
+- [x] Run automated accessibility tests (axe DevTools)
+- [x] Test keyboard navigation
+- [x] Test with screen readers (NVDA/JAWS)
+- [x] Fix accessibility issues
+- [x] Ensure WCAG AA compliance
+- [x] Test focus indicators
+- [x] Verify color contrast ratios
 
 **Estimated Time:** 3-4 hours
 
