@@ -85,8 +85,8 @@ export const CommandsSection: React.FC = () => {
       className="py-xxl md:py-xxxl container mx-auto px-m md:px-xl"
     >
       <div className="text-center mb-xl md:mb-xxl px-m">
-        <h2 className="text-h3 md:text-h2 mb-m">5 Sacred Commands</h2>
-        <p className="text-h4 md:text-h3 text-mid max-w-2xl mx-auto">
+        <h2 className="text-h2 md:text-h1 mb-m">5 Sacred Commands</h2>
+        <p className="text-body md:text-h3 text-mid max-w-2xl mx-auto">
           Simple commands. Powerful results. Your entire workflow in 5 steps.
         </p>
       </div>
