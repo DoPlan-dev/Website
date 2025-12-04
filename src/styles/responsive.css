@@ -1,0 +1,111 @@
+/* Responsive Design Utilities */
+
+/* Mobile-first approach - base styles are for mobile */
+
+/* Container max-widths */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-m);
+  padding-right: var(--spacing-m);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--spacing-l);
+    padding-right: var(--spacing-l);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1280px;
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+/* Typography responsive scaling */
+@media (max-width: 767px) {
+  .text-hero {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  
+  .text-h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  
+  .text-h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  
+  .text-h3 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+/* Touch target minimums */
+@media (max-width: 767px) {
+  button,
+  a[role="button"],
+  .btn-primary,
+  .btn-secondary {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  /* Ensure all interactive elements are touch-friendly */
+  input,
+  select,
+  textarea {
+    min-height: 48px;
+  }
+}
+
+/* Spacing adjustments for mobile */
+@media (max-width: 767px) {
+  .py-xxl {
+    padding-top: var(--spacing-xxl);
+    padding-bottom: var(--spacing-xxl);
+  }
+  
+  .mb-xxl {
+    margin-bottom: var(--spacing-xxl);
+  }
+  
+  .gap-xxl {
+    gap: var(--spacing-xxl);
+  }
+}
+
+/* Grid adjustments */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hide/show utilities for responsive design */
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+

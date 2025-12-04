@@ -14,7 +14,11 @@ export const Button: React.FC<ButtonProps> = ({
   const baseClasses = variant === 'primary' ? 'btn-primary' : 'btn-secondary'
   
   return (
-    <button className={`${baseClasses} ${className}`} {...props}>
+    <button 
+      className={`${baseClasses} ${className}`} 
+      style={{ minHeight: '48px' }} // Ensure 48px minimum touch target
+      {...props}
+    >
       {children}
     </button>
   )

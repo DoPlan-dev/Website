@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[720px] md:min-h-[600px] flex items-center overflow-hidden py-xxl"
+      className="relative min-h-[600px] md:min-h-[720px] flex items-center overflow-hidden py-xl md:py-xxl"
     >
       {/* Background Gradient Effects */}
       <div
@@ -46,20 +46,20 @@ export const Hero: React.FC = () => {
         }}
       />
 
-      <div className="container mx-auto px-xl py-xxl relative z-10">
+      <div className="container mx-auto px-m md:px-xl py-xl md:py-xxl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-xxl items-center">
           {/* Left Column - Content */}
           <div className="space-y-xl">
             {/* Headline */}
             <div>
-              <h1 className="text-hero md:text-h1 mb-m">
+              <h1 className="text-h1 md:text-hero mb-m">
                 Build Production Apps
                 <br />
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Without the Burnout
                 </span>
               </h1>
-              <p className="text-h3 text-mid mb-l">
+              <p className="text-body md:text-h3 text-mid mb-l">
                 Personalized AI assistance with 18 specialized agents. 98% success rate.
               </p>
               <p className="text-body text-mid">
@@ -102,7 +102,7 @@ export const Hero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-m">
-              <Button variant="primary" onClick={handleGetStarted} className="min-w-[200px]">
+              <Button variant="primary" onClick={handleGetStarted} className="w-full sm:w-auto sm:min-w-[200px]">
                 Get Started Now
               </Button>
               <Button
@@ -111,6 +111,7 @@ export const Hero: React.FC = () => {
                   window.open('https://github.com/DoPlan-dev/Website', '_blank')
                   trackCTAClick('github', 'hero')
                 }}
+                className="w-full sm:w-auto"
               >
                 View on GitHub
               </Button>

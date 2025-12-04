@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
 
   return (
     <footer className={`bg-void border-t border-cyan/20 ${className}`}>
-      <div className="container mx-auto px-xl py-xxl">
+      <div className="container mx-auto px-m md:px-xl py-xl md:py-xxl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-xxl mb-xl">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 href="https://github.com/DoPlan-dev/Website"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-mid hover:text-cyan transition-standard"
+                className="text-mid hover:text-cyan transition-standard p-s min-h-[48px] min-w-[48px] flex items-center justify-center"
                 aria-label="GitHub"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -55,12 +55,12 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <ul className="flex flex-col gap-s">
               {footerLinks.product.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-body text-mid hover:text-cyan transition-standard"
-                  >
-                    {link.label}
-                  </a>
+              <a
+                href={link.href}
+                className="text-body text-mid hover:text-cyan transition-standard py-s min-h-[48px] flex items-center"
+              >
+                {link.label}
+              </a>
                 </li>
               ))}
             </ul>
@@ -72,12 +72,12 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <ul className="flex flex-col gap-s">
               {footerLinks.community.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-body text-mid hover:text-cyan transition-standard"
-                  >
-                    {link.label}
-                  </a>
+              <a
+                href={link.href}
+                className="text-body text-mid hover:text-cyan transition-standard py-s min-h-[48px] flex items-center"
+              >
+                {link.label}
+              </a>
                 </li>
               ))}
             </ul>
@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-small text-mid hover:text-cyan transition-standard"
+                className="text-small text-mid hover:text-cyan transition-standard py-s min-h-[48px] flex items-center"
               >
                 {link.label}
               </a>

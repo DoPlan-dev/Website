@@ -12,7 +12,7 @@ export const Terminal: React.FC<TerminalProps> = ({
   className = '',
 }) => {
   return (
-    <div className={`terminal-container max-w-[480px] ${className}`}>
+    <div className={`terminal-container w-full max-w-[480px] ${className}`}>
       {/* Terminal Header */}
       <div className="terminal-header">
         <div className="terminal-controls">

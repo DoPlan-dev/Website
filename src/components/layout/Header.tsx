@@ -32,12 +32,12 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           : 'bg-transparent'
       } ${className}`}
     >
-      <nav className="container mx-auto px-xl py-m" aria-label="Main navigation">
+      <nav className="container mx-auto px-m md:px-xl py-m" aria-label="Main navigation">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a
             href="#home"
-            className="text-h3 font-bold text-light hover:text-cyan transition-standard"
+            className="text-h4 md:text-h3 font-bold text-light hover:text-cyan transition-standard"
             aria-label="DoPlan.dev Home"
           >
             DoPlan.dev
@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-body text-mid hover:text-cyan transition-standard"
+                className="text-body text-mid hover:text-cyan transition-standard py-m min-h-[48px] flex items-center"
               >
                 {link.label}
               </a>
@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               href="https://github.com/DoPlan-dev/Website"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-body text-mid hover:text-cyan transition-standard"
+              className="text-body text-mid hover:text-cyan transition-standard py-m min-h-[48px] flex items-center"
             >
               GitHub
             </a>
@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-s text-light hover:text-cyan transition-standard focus:outline-none focus:ring-2 focus:ring-cyan rounded-moderate"
+            className="md:hidden p-m text-light hover:text-cyan transition-standard focus:outline-none focus:ring-2 focus:ring-cyan rounded-moderate min-h-[48px] min-w-[48px] flex items-center justify-center"
             aria-label="Toggle mobile menu"
             aria-expanded={isMobileMenuOpen}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-body text-mid hover:text-cyan transition-standard py-s"
+                  className="text-body text-mid hover:text-cyan transition-standard py-m min-h-[48px] flex items-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -107,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 href="https://github.com/DoPlan-dev/Website"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-body text-mid hover:text-cyan transition-standard py-s"
+                className="text-body text-mid hover:text-cyan transition-standard py-m min-h-[48px] flex items-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 GitHub
