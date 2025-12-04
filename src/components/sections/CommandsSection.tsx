@@ -54,22 +54,25 @@ export const CommandsSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
+    // Use requestIdleCallback for better performance, fallback to setTimeout
+    const scheduleWork = window.requestIdleCallback || ((cb: () => void) => setTimeout(cb, 1))
+    
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = parseInt(entry.target.getAttribute('data-index') || '0')
-            setTimeout(() => {
+            scheduleWork(() => {
               setVisibleCards((prev) => {
                 const newState = [...prev]
                 newState[index] = true
                 return newState
               })
-            }, index * 100) // Stagger animation
+            })
           }
         })
       },
-      { threshold: 0.25 }
+      { threshold: 0.1, rootMargin: '50px' } // Lower threshold, earlier trigger
     )
 
     const cards = sectionRef.current?.querySelectorAll('[data-index]')

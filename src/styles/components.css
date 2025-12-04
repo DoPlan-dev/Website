@@ -218,6 +218,13 @@
   }
 }
 
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 600ms ease-out;
 }
