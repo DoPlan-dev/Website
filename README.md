@@ -34,6 +34,8 @@ cp .env.example .env
 - `VITE_GA_MEASUREMENT_ID` - Google Analytics Measurement ID
 - `VITE_HEATMAP_SITE_ID` - Heatmap tracking site ID (e.g., Hotjar)
 - `VITE_8N8_API_KEY` - 8n8 chat API key
+- `VITE_SENTRY_DSN` - Sentry error tracking DSN (optional)
+- `VITE_ENVIRONMENT` - Environment name (production/development, optional)
 
 All integrations are optional and will gracefully handle missing configuration.
 

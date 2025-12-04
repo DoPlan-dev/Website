@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { initIntegrations } from './lib/integrations'
+import { initMonitoring } from './lib/monitoring'
+
+// Initialize monitoring and error tracking
+initMonitoring()
 
 // Initialize third-party integrations
 initIntegrations()
