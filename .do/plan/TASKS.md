@@ -205,13 +205,13 @@ High-conversion marketing website to convert visitors into DoPlan CLI users. MVP
 
 **Estimated Time:** 3-4 hours
 
-### 3.5 Cross-Browser Testing
-- [ ] Test on Chrome (latest 2 versions)
-- [ ] Test on Safari (latest 2 versions)
-- [ ] Test on Firefox (latest 2 versions)
-- [ ] Test on Edge (latest 2 versions)
-- [ ] Fix browser-specific issues
-- [ ] Test on mobile browsers (iOS Safari, Android Chrome)
+### 3.5 Cross-Browser Testing ✅ Complete
+- [x] Test on Chrome (latest 2 versions)
+- [x] Test on Safari (latest 2 versions)
+- [x] Test on Firefox (latest 2 versions)
+- [x] Test on Edge (latest 2 versions)
+- [x] Fix browser-specific issues
+- [x] Test on mobile browsers (iOS Safari, Android Chrome)
 
 **Estimated Time:** 3-4 hours
 
