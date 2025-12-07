@@ -1,0 +1,115 @@
+/* Radix UI Homepage Theme Matching */
+
+/* Match Radix UI's exact color scheme */
+:root {
+  /* Radix UI Homepage Colors */
+  --radix-background: #ffffff;
+  --radix-surface: #fafafa;
+  --radix-text-primary: #11181c;
+  --radix-text-secondary: #687076;
+  --radix-border: #e4e7eb;
+  
+  /* Radix UI Component Colors */
+  --radix-blue: #0091ff;
+  --radix-blue-light: #e6f5ff;
+  --radix-gray-1: #fafafa;
+  --radix-gray-2: #f4f4f5;
+  --radix-gray-3: #e4e4e7;
+  --radix-gray-4: #d4d4d8;
+  --radix-gray-5: #a1a1aa;
+  --radix-gray-6: #71717a;
+  --radix-gray-7: #52525b;
+  --radix-gray-8: #3f3f46;
+  --radix-gray-9: #27272a;
+  --radix-gray-10: #18181b;
+  --radix-gray-11: #09090b;
+  --radix-gray-12: #000000;
+}
+
+/* Match Radix UI's spacing scale */
+.radix-spacing {
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+}
+
+/* Match Radix UI's typography scale */
+.radix-typography {
+  --font-size-1: 12px;
+  --font-size-2: 14px;
+  --font-size-3: 16px;
+  --font-size-4: 18px;
+  --font-size-5: 20px;
+  --font-size-6: 24px;
+  --font-size-7: 28px;
+  --font-size-8: 35px;
+  --font-size-9: 60px;
+}
+
+/* Match Radix UI's clean backgrounds */
+body,
+html {
+  background-color: var(--radix-background) !important;
+  color: var(--radix-text-primary);
+}
+
+/* Match Radix UI's section styling */
+section {
+  background-color: var(--radix-background) !important;
+}
+
+/* Match Radix UI's card styling */
+.radix-card {
+  background: var(--radix-background);
+  border: 1px solid var(--radix-border);
+  border-radius: 8px;
+  padding: var(--spacing-6);
+}
+
+/* Match Radix UI's button styling */
+.radix-button {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Match Radix UI's container max-width */
+.radix-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+/* Match Radix UI's clean shadows */
+.radix-shadow {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.radix-shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Match Radix UI's spacing */
+.radix-section {
+  padding: var(--spacing-9) 0;
+}
+
+/* Match Radix UI's heading styles */
+.radix-heading {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Match Radix UI's text styles */
+.radix-text {
+  color: var(--radix-text-secondary);
+  line-height: 1.6;
+}
+

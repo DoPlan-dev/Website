@@ -1,0 +1,175 @@
+/* PrimeVue Volt-Inspired Design System */
+/* Matching Volt's clean, professional aesthetic */
+
+:root {
+  /* Volt-inspired Colors */
+  --volt-primary: #6366f1; /* Primary accent */
+  --volt-surface: #ffffff;
+  --volt-surface-soft: #f8fafc;
+  --volt-border: #e2e8f0;
+  --volt-border-subtle: #f1f5f9;
+  
+  /* Text Colors */
+  --volt-text-primary: #0f172a;
+  --volt-text-secondary: #64748b;
+  --volt-text-tertiary: #94a3b8;
+  
+  /* Accent Colors */
+  --volt-blue: #6366f1;
+  --volt-green: #10b981;
+  --volt-amber: #f59e0b;
+  --volt-red: #ef4444;
+  
+  /* Volt Spacing Scale */
+  --volt-space-1: 0.25rem;  /* 4px */
+  --volt-space-2: 0.5rem;   /* 8px */
+  --volt-space-3: 0.75rem;  /* 12px */
+  --volt-space-4: 1rem;     /* 16px */
+  --volt-space-5: 1.25rem;  /* 20px */
+  --volt-space-6: 1.5rem;   /* 24px */
+  --volt-space-8: 2rem;     /* 32px */
+  --volt-space-10: 2.5rem;  /* 40px */
+  --volt-space-12: 3rem;    /* 48px */
+  --volt-space-16: 4rem;    /* 64px */
+  
+  /* Volt Typography */
+  --volt-font-sans: 'Inter', system-ui, sans-serif;
+  --volt-font-mono: 'JetBrains Mono', monospace;
+  
+  /* Volt Shadows - Subtle and professional */
+  --volt-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --volt-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --volt-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --volt-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Volt Border Radius */
+  --volt-radius-sm: 0.375rem;  /* 6px */
+  --volt-radius: 0.5rem;       /* 8px */
+  --volt-radius-md: 0.75rem;   /* 12px */
+  --volt-radius-lg: 1rem;      /* 16px */
+}
+
+/* Volt-Inspired Global Styles */
+body {
+  background-color: var(--volt-surface);
+  color: var(--volt-text-primary);
+  font-family: var(--volt-font-sans);
+}
+
+/* Volt-Inspired Components */
+.volt-card {
+  background: var(--volt-surface);
+  border: 1px solid var(--volt-border);
+  border-radius: var(--volt-radius-md);
+  padding: var(--volt-space-6);
+  box-shadow: var(--volt-shadow);
+  transition: all 0.2s ease;
+}
+
+.volt-card:hover {
+  box-shadow: var(--volt-shadow-md);
+  border-color: var(--volt-border);
+}
+
+.volt-button-primary {
+  background: var(--volt-primary);
+  color: white;
+  border-radius: var(--volt-radius);
+  padding: var(--volt-space-3) var(--volt-space-5);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.volt-button-primary:hover {
+  background: #4f46e5;
+  box-shadow: var(--volt-shadow-md);
+}
+
+/* Volt-Inspired Section Styling */
+.volt-section {
+  padding: var(--volt-space-16) 0;
+  background: var(--volt-surface);
+}
+
+.volt-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--volt-space-6);
+}
+
+/* Volt-Inspired Typography */
+.volt-heading {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--volt-text-primary);
+}
+
+.volt-text {
+  color: var(--volt-text-secondary);
+  line-height: 1.6;
+}
+
+/* Volt-Inspired Section Spacing */
+.volt-section-padding {
+  padding: var(--volt-space-16) 0;
+}
+
+/* Volt-Inspired Card Hover Effects */
+.volt-card-hover {
+  transition: all 0.2s ease;
+}
+
+.volt-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--volt-shadow-md);
+}
+
+/* Volt-Inspired Typography Enhancements */
+.volt-heading-large {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--volt-text-primary);
+}
+
+.volt-heading-medium {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--volt-text-primary);
+}
+
+/* Volt-Inspired Button Styles */
+.volt-button {
+  border-radius: var(--volt-radius);
+  padding: var(--volt-space-3) var(--volt-space-5);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--volt-border);
+  background: white;
+  color: var(--volt-text-primary);
+  cursor: pointer;
+}
+
+.volt-button:hover {
+  background: var(--volt-surface-soft);
+  border-color: var(--volt-primary);
+}
+
+.volt-button-primary {
+  background: var(--volt-primary);
+  color: white;
+  border-color: var(--volt-primary);
+}
+
+.volt-button-primary:hover {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  box-shadow: var(--volt-shadow-md);
+}
+

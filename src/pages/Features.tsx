@@ -302,7 +302,7 @@ export const Features: React.FC = () => {
             <Button
               variant="secondary"
               onClick={() => {
-                window.open('https://github.com/DoPlan-dev/Website', '_blank')
+                window.open('https://github.com/DoPlan-dev/CLI', '_blank')
                 trackCTAClick('github', 'features-cta')
               }}
               className="w-full sm:w-auto"

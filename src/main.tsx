@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './router'
 import './index.css'
 import { initIntegrations } from './lib/integrations'
 import { initMonitoring } from './lib/monitoring'
+import { RadixThemeProvider } from './components/providers/RadixThemeProvider'
 
 // Initialize monitoring and error tracking
 initMonitoring()
@@ -13,7 +15,9 @@ initIntegrations()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RadixThemeProvider>
+      <RouterProvider router={router} />
+    </RadixThemeProvider>
   </React.StrictMode>,
 )
 

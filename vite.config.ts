@@ -16,12 +16,40 @@ export default defineConfig({
     target: 'es2020', // Support modern browsers (Chrome 90+, Safari 14+, Firefox 88+, Edge 90+)
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
+        manualChunks: (id) => {
+          // React and React DOM
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'react-vendor'
+          }
+          // Radix UI components
+          if (id.includes('node_modules/@radix-ui')) {
+            return 'radix-ui'
+          }
+          // Framer Motion
+          if (id.includes('node_modules/framer-motion')) {
+            return 'framer-motion'
+          }
+          // DnD Kit
+          if (id.includes('node_modules/@dnd-kit')) {
+            return 'dnd-kit'
+          }
+          // Lucide icons
+          if (id.includes('node_modules/lucide-react')) {
+            return 'lucide-icons'
+          }
+          // Router
+          if (id.includes('node_modules/react-router')) {
+            return 'router'
+          }
+          // Large builder components
+          if (id.includes('/builders/')) {
+            return 'builders'
+          }
         },
       },
     },
-    chunkSizeWarningLimit: 1000,
+    // Optimize chunk sizes
+    chunkSizeWarningLimit: 600,
   },
   optimizeDeps: {
     include: ['react', 'react-dom'],

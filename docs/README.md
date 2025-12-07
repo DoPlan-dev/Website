@@ -10,6 +10,13 @@ DoPlan keeps every long-form artifact inside `docs/` so the repository root stay
 | `docs/history/` | Changelog, meeting notes, audit logs |
 | `docs/ops/` | Release checklists, security reviews, CI/CD docs |
 | `docs/research/` | Brainstorms, interviews, experiment logs |
+| `docs/status/` | Status updates and progress reports |
+| `docs/phases/` | Development phase documentation |
+| `docs/migrations/` | UI framework migration documentation (VOLT, RADIX) |
+| `docs/guides/` | Testing guides and user documentation |
+| `docs/plans/` | Implementation plans and strategies |
+| `docs/roadmaps/` | Roadmaps and future planning documents |
+| `docs/summaries/` | Completion summaries and change documentation |
 
 ## Rules
 

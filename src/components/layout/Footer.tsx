@@ -11,7 +11,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
     product: [
       { label: 'Features', href: '#features' },
       { label: 'Documentation', href: '#docs' },
-      { label: 'GitHub', href: 'https://github.com/DoPlan-dev/Website' },
+      { label: 'GitHub', href: 'https://github.com/DoPlan-dev/CLI' },
     ],
     community: [
       { label: 'Discord', href: '#' },
@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             </p>
             <div className="flex gap-m">
               <a
-                href="https://github.com/DoPlan-dev/Website"
+                href="https://github.com/DoPlan-dev/CLI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-mid hover:text-cyan transition-all duration-standard ease-smooth p-s min-h-[48px] min-w-[48px] flex items-center justify-center"

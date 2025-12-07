@@ -1,22 +1,42 @@
+@import '@radix-ui/themes/styles.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 @import './styles/components.css';
 @import './styles/responsive.css';
+@import './styles/radix-theme.css';
+@import './styles/volt-inspired.css';
+@import './styles/section-headings.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Design System Colors - CSS Variables */
-  --color-void: #0A0E27;
-  --color-cyan: #00D9FF;
+  /* Google Colors */
+  --color-google-blue: #6366f1;
+  --color-google-yellow: #FBBC04;
+  --color-google-red: #EA4335;
+  --color-google-green: #34A853;
+  /* Light Theme Colors */
+  --color-light-bg: #F8F9FA;
+  --color-dark-text: #202124;
+  --color-medium-gray: #80868B;
+  --color-light-gray: #ECECEC;
+  /* Light color variants */
+  --color-light-blue: #E8F0FE;
+  --color-light-yellow: #FEF7E0;
+  --color-light-red: #FDECEB;
+  --color-light-green: #E6F4EA;
+  /* Legacy colors (for compatibility during migration) */
+  --color-void: #F8F9FA;
+  --color-cyan: #6366f1;
   --color-purple: #9D4EDD;
-  --color-light: #E8F0FF;
-  --color-mid: #B0BBCC;
-  --color-success: #00D98E;
-  --color-warning: #FF9D3D;
-  --color-error: #FF4757;
+  --color-light: #202124;
+  --color-mid: #80868B;
+  --color-success: #34A853;
+  --color-warning: #FBBC04;
+  --color-error: #EA4335;
   --color-neutral-dark: #5A6B7F;
   
   /* Spacing Scale (8px base) */
@@ -118,9 +138,88 @@
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: var(--color-void);
-  color: var(--color-light);
+  background-color: #ffffff;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+}
+
+/* Match Radix UI homepage - clean white backgrounds */
+.radix-ui-style {
+  background-color: #ffffff;
+}
+
+/* Section backgrounds - match Radix UI minimal style */
+section {
+  background-color: #ffffff;
+}
+
+section.bg-light-bg,
+section.bg-gradient-to-b {
+  background: #ffffff;
+}
+
+/* Enhanced Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Accordion animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+[data-state="open"] {
+  animation: accordion-down 0.2s ease-out;
+}
+
+[data-state="closed"] {
+  animation: accordion-up 0.2s ease-out;
 }
 

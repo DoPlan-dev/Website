@@ -110,7 +110,7 @@ export const Hero: React.FC = () => {
               <Button
                 variant="secondary"
                 onClick={() => {
-                  window.open('https://github.com/DoPlan-dev/Website', '_blank')
+                  window.open('https://github.com/DoPlan-dev/CLI', '_blank')
                   trackCTAClick('github', 'hero')
                 }}
                 className="w-full sm:w-auto"

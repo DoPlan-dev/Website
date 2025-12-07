@@ -9,7 +9,7 @@ export const StructuredData: React.FC = () => {
     logo: 'https://doplan.dev/logo.png',
     description: 'Build production-ready apps with 18 specialized AI agents. 98% success rate.',
     sameAs: [
-      'https://github.com/DoPlan-dev/Website',
+      'https://github.com/DoPlan-dev/CLI',
     ],
   }
 

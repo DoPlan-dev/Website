@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children, className = '' }) => {
   return (
-    <div className={`min-h-screen flex flex-col bg-void text-light ${className}`}>
+    <div className={`min-h-screen flex flex-col bg-light-bg text-dark-text ${className}`}>
       {/* Skip to content link for accessibility */}
       <a
         href="#main-content"

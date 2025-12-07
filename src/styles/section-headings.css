@@ -1,0 +1,12 @@
+/* Programmer-style font for section headings */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+/* Standardized section heading styles */
+.section-heading {
+  font-family: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #0f172a;
+}
+

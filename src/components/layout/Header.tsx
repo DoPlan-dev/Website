@@ -55,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               </a>
             ))}
             <a
-              href="https://github.com/DoPlan-dev/Website"
+              href="https://github.com/DoPlan-dev/CLI"
               target="_blank"
               rel="noopener noreferrer"
               className="text-body text-mid hover:text-cyan transition-standard py-m min-h-[48px] flex items-center"
@@ -104,7 +104,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 </a>
               ))}
               <a
-                href="https://github.com/DoPlan-dev/Website"
+                href="https://github.com/DoPlan-dev/CLI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-body text-mid hover:text-cyan transition-all duration-standard ease-smooth py-m min-h-[48px] flex items-center"
