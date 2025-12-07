@@ -14,10 +14,6 @@ const HelpPage = lazy(() =>
   import('./pages/HelpPage').then(module => ({ default: module.HelpPage }))
 )
 
-const DesignSystem = lazy(() => 
-  import('./pages/DesignSystem').then(module => ({ default: module.DesignSystem }))
-)
-
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -66,16 +62,6 @@ export const router = createBrowserRouter([
       <LayoutWrapper>
         <Suspense fallback={<div className="min-h-screen bg-white" />}>
           <HelpPage />
-        </Suspense>
-      </LayoutWrapper>
-    ),
-  },
-  {
-    path: '/design-system',
-    element: (
-      <LayoutWrapper>
-        <Suspense fallback={<div className="min-h-screen bg-white" />}>
-          <DesignSystem />
         </Suspense>
       </LayoutWrapper>
     ),
