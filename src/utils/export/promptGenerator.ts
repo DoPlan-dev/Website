@@ -1,7 +1,7 @@
-import { UnifiedWebsite, PageSection } from '../../data/builders/unifiedWebsite'
+// Builder types removed - functions below may need refactoring if used
 import { getTemplateById } from '../../data/sectionTemplates'
 
-export const generateSectionPrompt = (section: PageSection): string => {
+export const generateSectionPrompt = (section: any): string => {
   const template = getTemplateById(section.sectionId)
   
   return `# Section: ${template?.name || 'Custom Section'}
@@ -40,7 +40,7 @@ Generate React component code that matches this specification exactly.
 `
 }
 
-export const generateWebsitePrompt = (website: UnifiedWebsite): string => {
+export const generateWebsitePrompt = (website: any): string => {
   return `# Website: ${website.name}
 
 ## Overview

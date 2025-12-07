@@ -1,7 +1,6 @@
 // Change tracking utilities
 
 import { Change } from '../../types/collaboration'
-import { PageSection } from '../../data/builders/unifiedWebsite'
 
 export interface ChangeTracker {
   changes: Change[]
@@ -48,7 +47,7 @@ export function createChangeTracker(versionId: string, author: string): ChangeTr
  */
 export function trackSectionCreate(
   tracker: ChangeTracker,
-  section: PageSection,
+  section: any,
   pageIndex: number,
   sectionIndex: number
 ): void {
@@ -91,7 +90,7 @@ export function trackSectionUpdate(
  */
 export function trackSectionDelete(
   tracker: ChangeTracker,
-  section: PageSection,
+  section: any,
   pageIndex: number,
   sectionIndex: number
 ): void {

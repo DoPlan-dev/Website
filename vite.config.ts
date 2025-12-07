@@ -41,10 +41,6 @@ export default defineConfig({
           if (id.includes('node_modules/react-router')) {
             return 'router'
           }
-          // Large builder components
-          if (id.includes('/builders/')) {
-            return 'builders'
-          }
         },
       },
     },

@@ -1,4 +1,4 @@
-import { UnifiedWebsite, PageSection } from '../../data/builders/unifiedWebsite'
+// Builder types removed - functions below may need refactoring if used
 import { getTemplateById, SectionComponent } from '../../data/sectionTemplates'
 import { generateCSS } from '../style-editor/styleGenerator'
 import { generateKeyframesCSS } from '../animations/animationGenerator'
@@ -9,7 +9,7 @@ import { ComponentAnimations } from '../../types/animations'
 /**
  * Generate React component code from a section
  */
-export const generateReactComponent = (section: PageSection, componentName?: string): string => {
+export const generateReactComponent = (section: any, componentName?: string): string => {
   const template = getTemplateById(section.sectionId)
   if (!template) return '// Template not found'
 
@@ -208,7 +208,7 @@ ${componentsHTML}
 /**
  * Generate Next.js page code
  */
-export const generateNextJSPage = (page: UnifiedWebsite['pages'][0]): string => {
+export const generateNextJSPage = (page: any): string => {
   const sectionsCode = page.sections
     .sort((a, b) => a.order - b.order)
     .map(section => {
@@ -246,7 +246,7 @@ ${sectionsCode}
 /**
  * Generate complete project structure
  */
-export const generateProjectStructure = (website: UnifiedWebsite): Record<string, string> => {
+export const generateProjectStructure = (website: any): Record<string, string> => {
   const files: Record<string, string> = {}
 
   // Generate all sections as React components

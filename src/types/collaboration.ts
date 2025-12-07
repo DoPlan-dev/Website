@@ -1,11 +1,9 @@
 // Type definitions for collaboration and versioning
 
-import { UnifiedWebsite } from '../data/builders/unifiedWebsite'
-
 export interface Version {
   id: string
   version: string // e.g., "1.0.0", "1.1.0"
-  website: UnifiedWebsite
+  website: any
   createdAt: number
   createdBy: string
   description?: string

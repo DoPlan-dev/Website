@@ -30,8 +30,8 @@ export const DesignSystem: React.FC = () => {
     <DashboardLayout activeSection={activeSection} onSectionChange={setActiveSection}>
       {/* Header */}
       <div className="mb-12">
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex-1">
+        <div className="mb-4">
+          <div>
             <Heading 
               size="9" 
               style={{ 
@@ -54,14 +54,6 @@ export const DesignSystem: React.FC = () => {
               Comprehensive guide to our brand standards, components, and design patterns
             </Text>
           </div>
-          <Button
-            size="3"
-            onClick={() => navigate('/design-system/builder')}
-            className="ml-4"
-          >
-            <LucideIcon name="Wand2" size={18} color="#ffffff" variant="outline" />
-            <span className="ml-2">Builders Hub</span>
-          </Button>
         </div>
       </div>
 

@@ -1,7 +1,6 @@
 // Version management utilities
 
 import { Version, VersionHistory, Change } from '../../types/collaboration'
-import { UnifiedWebsite } from '../../data/builders/unifiedWebsite'
 
 /**
  * Create a new version from a website
@@ -194,7 +193,7 @@ export function getVersionHistory(versions: Version[]): VersionHistory {
 /**
  * Restore website from version
  */
-export function restoreFromVersion(version: Version): UnifiedWebsite {
+export function restoreFromVersion(version: Version): any {
   return JSON.parse(JSON.stringify(version.website))
 }
 

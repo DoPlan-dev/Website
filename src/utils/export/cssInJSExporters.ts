@@ -1,12 +1,10 @@
 // CSS-in-JS exporters (styled-components, emotion)
-
-import { PageSection } from '../../data/builders/unifiedWebsite'
 import { getTemplateById, SectionComponent } from '../../data/sectionTemplates'
 
 /**
  * Generate styled-components code from a section
  */
-export function generateStyledComponents(section: PageSection): string {
+export function generateStyledComponents(section: any): string {
   const template = getTemplateById(section.sectionId)
   if (!template) return '// Template not found'
 
@@ -53,7 +51,7 @@ export const ${componentName}: React.FC = () => {
 /**
  * Generate emotion (css prop) code from a section
  */
-export function generateEmotionCSS(section: PageSection): string {
+export function generateEmotionCSS(section: any): string {
   const template = getTemplateById(section.sectionId)
   if (!template) return '// Template not found'
 
@@ -78,7 +76,7 @@ export const ${componentName}: React.FC = () => {
 /**
  * Generate CSS modules code from a section
  */
-export function generateCSSModules(section: PageSection): string {
+export function generateCSSModules(section: any): string {
   const template = getTemplateById(section.sectionId)
   if (!template) return '// Template not found'
 
